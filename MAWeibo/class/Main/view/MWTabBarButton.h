@@ -10,4 +10,6 @@
 
 @interface MWTabBarButton : UIButton
 
+@property (strong, nonatomic) UITabBarItem *item;
+
 @end

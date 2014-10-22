@@ -14,7 +14,7 @@
 
 #import "MWTabBar.h"
 
-@interface MWTabBarViewController ()
+@interface MWTabBarViewController ()<MWTabBarDelegate>
 
 @property (weak, nonatomic) MWTabBar *tabBarView;
 
@@ -28,23 +28,24 @@
 {
     [super viewDidLoad];
     
-     [self setupAllChildViewControllers];
-    
     // 初始化tabbar
     [self setupTabbar];
     
-   
     
+     [self setupAllChildViewControllers];
+    
+  
+
 }
 /**
  *  初始化所有子控制器
  */
-- (void)setupAllChildViewControllers
+- (void)setupTabbar
 {
     MWTabBar *tabBarView = [[MWTabBar alloc]init];
     [tabBarView setFrame:self.tabBar.bounds];
     [self.tabBar addSubview:tabBarView];
-    
+    tabBarView.delegate = self;
     self.tabBarView = tabBarView;
 }
 
@@ -58,24 +59,36 @@
         }
     }
 }
+/**
+ *  代理方法
+ */
+- (void)tabBar:(MWTabBar *)tabBar didselectButtonFrom:(int)from to:(int)to
+{
+    self.selectedIndex = to;
+}
 
 /**
  *  初始化TabBar视图
  */
-- (void)setupTabbar
+- (void)setupAllChildViewControllers
 {
     MWHomeViewController *home = [[MWHomeViewController alloc]init];
-    [self setupChildViewController:home title:@"首页" WithImage:[UIImage imageWithName:@"tabbar_home"] SelectImage:[UIImage imageWithName:@"tabbar_home_selected"]];
+    home.tabBarItem.badgeValue = @"100";
+    
+    [self setupChildViewController:home title:@"首页" WithImageName:@"tabbar_home" SelectImageName:@"tabbar_home_selected"];
     
     MWMessageViewController *message = [[MWMessageViewController alloc]init];
-    [self setupChildViewController:message title:@"消息" WithImage:[UIImage imageWithName:@"tabbar_message_center"] SelectImage:[UIImage imageWithName:@"tabbar_message_center_selected"]];
+     message.tabBarItem.badgeValue = @"100";
+    [self setupChildViewController:message title:@"消息" WithImageName:@"tabbar_message_center" SelectImageName:@"tabbar_message_center_selected"];
     
     MWDiscoverViewController *discover = [[MWDiscoverViewController alloc]init];
-    [self setupChildViewController:discover title:@"广场" WithImage:[UIImage imageWithName:@"tabbar_discover"] SelectImage:[UIImage imageWithName:@"tabbar_discover_selected"]];
+     discover.tabBarItem.badgeValue = @"100";
+    [self setupChildViewController:discover title:@"广场" WithImageName:@"tabbar_discover"SelectImageName:@"tabbar_discover_selected"];
 
     
     MWMeViewController *me = [[MWMeViewController alloc]init];
-    [self setupChildViewController:me title:@"我" WithImage:[UIImage imageWithName:@"tabbar_profile"] SelectImage:[UIImage imageWithName:@"tabbar_profile_selected"]];
+     me.tabBarItem.badgeValue = @"100";
+    [self setupChildViewController:me title:@"我" WithImageName:@"tabbar_profile" SelectImageName:@"tabbar_profile_selected"];
  
 }
 
@@ -87,14 +100,17 @@
  *  @param image       图标
  *  @param selectImage 选中的图标
  */
-- (void)setupChildViewController:(UIViewController *)childVc title:(NSString *)title WithImage:(UIImage *)image SelectImage:(UIImage *)selectImage
+- (void)setupChildViewController:(UIViewController *)childVc title:(NSString *)title WithImageName:(NSString *)imageName SelectImageName:(NSString *)selectImageName
 {
     // 1. 设置控制器的属性
     childVc.title = title;
     // 设置图标
-    childVc.tabBarItem.image = image;
+    childVc.tabBarItem.image = [UIImage imageWithName:imageName];
     // 设置选中图片
-    childVc.tabBarItem.selectedImage = selectImage;
+    UIImage *selectedImage = [UIImage imageWithName:selectImageName];
+    if (iOS7) {
+        childVc.tabBarItem.selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    }
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:childVc];
     [self addChildViewController:nav];
     

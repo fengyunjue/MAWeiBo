@@ -9,6 +9,11 @@
 #import "MWTabBar.h"
 #import "MWTabBarButton.h"
 
+@interface MWTabBar()
+
+@property (weak, nonatomic) MWTabBarButton *selectButton;
+
+@end
 @implementation MWTabBar
 
 - (id)initWithFrame:(CGRect)frame
@@ -28,13 +33,27 @@
 - (void)addTabBarButtonWithItem:(UITabBarItem *)item
 {
     MWTabBarButton *button = [[MWTabBarButton alloc]init];
-    [button setImage:item.image forState:UIControlStateNormal];
-    [button setImage:item.selectedImage forState:UIControlStateSelected];
-    
-    [button setTitle:item.title forState:UIControlStateNormal];
-    [button setTitle:item.title forState:UIControlStateSelected];
-    
+    button.item = item;
     [self addSubview:button];
+    [button addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchDown];
+    
+    
+    if (self.subviews.count == 1) {
+        [self click:button];
+    }
+    
+}
+
+
+- (void)click:(MWTabBarButton *)button
+{
+    // 1. 通知代理
+    if ([self.delegate respondsToSelector:@selector(tabBar:didselectButtonFrom:to:)]) {
+        [self.delegate tabBar:self didselectButtonFrom:self.selectButton.tag to:button.tag];
+    }
+    self.selectButton.selected = NO;
+    button.selected = YES;
+    self.selectButton = button;
 }
 
 - (void)layoutSubviews
