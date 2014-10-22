@@ -18,12 +18,15 @@
 		8450B6CD19F7C9B000950C7E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8450B6CB19F7C9B000950C7E /* InfoPlist.strings */; };
 		8450B6CF19F7C9B000950C7E /* MAWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450B6CE19F7C9B000950C7E /* MAWeiboTests.m */; };
 		8450B70B19F7CF6F00950C7E /* MWDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450B6EB19F7CF6F00950C7E /* MWDiscoverViewController.m */; };
-		8450B70C19F7CF6F00950C7E /* MWHemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450B6F119F7CF6F00950C7E /* MWHemoViewController.m */; };
+		8450B70C19F7CF6F00950C7E /* MWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450B6F119F7CF6F00950C7E /* MWHomeViewController.m */; };
 		8450B70D19F7CF6F00950C7E /* MWTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450B6F719F7CF6F00950C7E /* MWTabBarViewController.m */; };
 		8450B70E19F7CF6F00950C7E /* MWMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450B6FD19F7CF6F00950C7E /* MWMeViewController.m */; };
 		8450B70F19F7CF6F00950C7E /* MWMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450B70319F7CF6F00950C7E /* MWMessageViewController.m */; };
 		8450B71019F7CF6F00950C7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450B70719F7CF6F00950C7E /* main.m */; };
 		8450B71119F7CF6F00950C7E /* MWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450B70A19F7CF6F00950C7E /* MWAppDelegate.m */; };
+		8450B75619F7DD6C00950C7E /* UIImage+MA.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450B75519F7DD6C00950C7E /* UIImage+MA.m */; };
+		8488074019F7E94600D8DCEB /* MWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488073F19F7E94600D8DCEB /* MWTabBar.m */; };
+		8488074319F7EE2300D8DCEB /* MWTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488074219F7EE2300D8DCEB /* MWTabBarButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +54,8 @@
 		8450B6CE19F7C9B000950C7E /* MAWeiboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAWeiboTests.m; sourceTree = "<group>"; };
 		8450B6EA19F7CF6F00950C7E /* MWDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWDiscoverViewController.h; sourceTree = "<group>"; };
 		8450B6EB19F7CF6F00950C7E /* MWDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWDiscoverViewController.m; sourceTree = "<group>"; };
-		8450B6F019F7CF6F00950C7E /* MWHemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWHemoViewController.h; sourceTree = "<group>"; };
-		8450B6F119F7CF6F00950C7E /* MWHemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWHemoViewController.m; sourceTree = "<group>"; };
+		8450B6F019F7CF6F00950C7E /* MWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWHomeViewController.h; sourceTree = "<group>"; };
+		8450B6F119F7CF6F00950C7E /* MWHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWHomeViewController.m; sourceTree = "<group>"; };
 		8450B6F619F7CF6F00950C7E /* MWTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTabBarViewController.h; sourceTree = "<group>"; };
 		8450B6F719F7CF6F00950C7E /* MWTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTabBarViewController.m; sourceTree = "<group>"; };
 		8450B6FC19F7CF6F00950C7E /* MWMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMeViewController.h; sourceTree = "<group>"; };
@@ -63,6 +66,12 @@
 		8450B70819F7CF6F00950C7E /* MAWeibo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MAWeibo-Prefix.pch"; sourceTree = "<group>"; };
 		8450B70919F7CF6F00950C7E /* MWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWAppDelegate.h; sourceTree = "<group>"; };
 		8450B70A19F7CF6F00950C7E /* MWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWAppDelegate.m; sourceTree = "<group>"; };
+		8450B75419F7DD6C00950C7E /* UIImage+MA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MA.h"; sourceTree = "<group>"; };
+		8450B75519F7DD6C00950C7E /* UIImage+MA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MA.m"; sourceTree = "<group>"; };
+		8488073E19F7E94600D8DCEB /* MWTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTabBar.h; sourceTree = "<group>"; };
+		8488073F19F7E94600D8DCEB /* MWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTabBar.m; sourceTree = "<group>"; };
+		8488074119F7EE2300D8DCEB /* MWTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTabBarButton.h; sourceTree = "<group>"; };
+		8488074219F7EE2300D8DCEB /* MWTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTabBarButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,8 +224,8 @@
 		8450B6EF19F7CF6F00950C7E /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				8450B6F019F7CF6F00950C7E /* MWHemoViewController.h */,
-				8450B6F119F7CF6F00950C7E /* MWHemoViewController.m */,
+				8450B6F019F7CF6F00950C7E /* MWHomeViewController.h */,
+				8450B6F119F7CF6F00950C7E /* MWHomeViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -264,6 +273,10 @@
 		8450B6F919F7CF6F00950C7E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				8488073E19F7E94600D8DCEB /* MWTabBar.h */,
+				8488073F19F7E94600D8DCEB /* MWTabBar.m */,
+				8488074119F7EE2300D8DCEB /* MWTabBarButton.h */,
+				8488074219F7EE2300D8DCEB /* MWTabBarButton.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -337,12 +350,22 @@
 		8450B70619F7CF6F00950C7E /* other */ = {
 			isa = PBXGroup;
 			children = (
+				8450B75319F7DD6C00950C7E /* cateGory */,
 				8450B70719F7CF6F00950C7E /* main.m */,
 				8450B70819F7CF6F00950C7E /* MAWeibo-Prefix.pch */,
 				8450B70919F7CF6F00950C7E /* MWAppDelegate.h */,
 				8450B70A19F7CF6F00950C7E /* MWAppDelegate.m */,
 			);
 			path = other;
+			sourceTree = "<group>";
+		};
+		8450B75319F7DD6C00950C7E /* cateGory */ = {
+			isa = PBXGroup;
+			children = (
+				8450B75419F7DD6C00950C7E /* UIImage+MA.h */,
+				8450B75519F7DD6C00950C7E /* UIImage+MA.m */,
+			);
+			path = cateGory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,10 +464,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8488074019F7E94600D8DCEB /* MWTabBar.m in Sources */,
+				8488074319F7EE2300D8DCEB /* MWTabBarButton.m in Sources */,
 				8450B70E19F7CF6F00950C7E /* MWMeViewController.m in Sources */,
+				8450B75619F7DD6C00950C7E /* UIImage+MA.m in Sources */,
 				8450B70B19F7CF6F00950C7E /* MWDiscoverViewController.m in Sources */,
 				8450B70D19F7CF6F00950C7E /* MWTabBarViewController.m in Sources */,
-				8450B70C19F7CF6F00950C7E /* MWHemoViewController.m in Sources */,
+				8450B70C19F7CF6F00950C7E /* MWHomeViewController.m in Sources */,
 				8450B71019F7CF6F00950C7E /* main.m in Sources */,
 				8450B70F19F7CF6F00950C7E /* MWMessageViewController.m in Sources */,
 				8450B71119F7CF6F00950C7E /* MWAppDelegate.m in Sources */,
@@ -567,7 +593,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MAWeibo/class/other/MAWeibo-Prefix.pch";
 				INFOPLIST_FILE = "MAWeibo/MAWeibo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -580,7 +608,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MAWeibo/class/other/MAWeibo-Prefix.pch";
 				INFOPLIST_FILE = "MAWeibo/MAWeibo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -644,6 +674,7 @@
 				8450B6D419F7C9B000950C7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8450B6D519F7C9B000950C7E /* Build configuration list for PBXNativeTarget "MAWeiboTests" */ = {
 			isa = XCConfigurationList;
@@ -652,6 +683,7 @@
 				8450B6D719F7C9B000950C7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

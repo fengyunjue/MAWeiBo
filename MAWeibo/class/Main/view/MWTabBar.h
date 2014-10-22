@@ -1,5 +1,5 @@
 //
-//  MWHemoViewController.h
+//  MWTabBar.h
 //  MAWeibo
 //
 //  Created by admin on 14-10-22.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MWHemoViewController : UIViewController
+@interface MWTabBar : UIView
+
+- (void)addTabBarButtonWithItem:(UITabBarItem *)item;
 
 @end

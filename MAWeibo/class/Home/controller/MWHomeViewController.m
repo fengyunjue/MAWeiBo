@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 mage. All rights reserved.
 //
 
-#import "MWHemoViewController.h"
+#import "MWHomeViewController.h"
 
-@interface MWHemoViewController ()
+@interface MWHomeViewController ()
 
 @end
 
-@implementation MWHemoViewController
+@implementation MWHomeViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
