@@ -12,7 +12,7 @@
 @protocol MWTabBarDelegate <NSObject>
 
 @optional
-- (void)tabBar:(MWTabBar *)tabBar didselectButtonFrom:(int)from to:(int)to;
+- (void)tabBar:(MWTabBar *)tabBar didselectButtonFrom:(NSInteger)from to:(NSInteger)to;
 
 @end
 
