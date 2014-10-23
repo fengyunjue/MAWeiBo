@@ -14,18 +14,40 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
-    }
+        [self setBackgroundImage:[UIImage resizedImageWithName:@"main_badge"] forState:UIControlStateNormal];
+        self.titleLabel.font = [UIFont systemFontOfSize:11];
+        self.hidden = YES;
+        self.userInteractionEnabled = NO;
+            }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)setBadgeValue:(NSString *)badgeValue
 {
-    // Drawing code
+    _badgeValue = [badgeValue copy];
+
+    if (_badgeValue) {
+        // 设置提示数字
+        [self setTitle:_badgeValue forState:UIControlStateNormal];
+        CGRect frame = self.frame;
+        CGFloat badgeH = self.currentBackgroundImage.size.height;
+        CGFloat badgeW = self.currentBackgroundImage.size.width;
+        if (badgeValue.length > 1) {
+            // 文字的尺寸
+            CGSize badgeSize = [badgeValue sizeWithFont:self.titleLabel.font];
+            badgeW = badgeSize.width + 10;
+        }
+        frame.size.width = badgeW;
+        frame.size.height = badgeH;
+        self.frame = frame;
+        self.hidden = NO;
+    } else {
+        self.hidden = YES;
+    }
+    
+
+    
 }
-*/
+
 
 @end

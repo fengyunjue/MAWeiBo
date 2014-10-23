@@ -34,10 +34,13 @@
 
         [self setTitleColor:MWTabBarButtonTitleColor forState:UIControlStateNormal];
         [self setTitleColor:MWTabBarButtonTitleSelectedColor forState:UIControlStateSelected];
-        
-     
-        
+        if (!iOS7) { // 非iOS7下,设置按钮选中时的背景
+            [self setBackgroundImage:[UIImage imageWithName:@"tabbar_slider"] forState:UIControlStateSelected];
+        }
+    
         MWbadgeButton *badgeButton = [[MWbadgeButton alloc]init];
+           badgeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin |UIViewAutoresizingFlexibleBottomMargin;
+        
         [self addSubview:badgeButton];
         self.badgeButton = badgeButton;
     }
@@ -92,27 +95,12 @@
     [self setTitle:self.item.title forState:UIControlStateNormal];
     [self setTitle:self.item.title forState:UIControlStateSelected];
     
-    
-    
-    self.badgeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
-    [self.badgeButton setBackgroundImage:[UIImage resizedImageWithName:@"main_badge"] forState:UIControlStateNormal];
-    self.badgeButton.titleLabel.font = [UIFont systemFontOfSize:11];
-    // 设置提示数字
-    [self.badgeButton setTitle:self.item.badgeValue forState:UIControlStateNormal];
-    
-    CGSize size = [self.item.badgeValue sizeWithFont:self.badgeButton.titleLabel.font];
-    CGFloat buttonW = size.width + 10;
-    CGFloat buttonH = self.badgeButton.currentBackgroundImage.size.height;
-//    CGFloat buttonY = 5;
-//    CGFloat buttonX = self.frame.size.width - buttonW - 10;
-    
-//    CGFloat buttonH = 50;
-    self.badgeButton.userInteractionEnabled = NO;
-    CGFloat buttonY = 5;
-    CGFloat buttonX = 80;
-    
-    [self.badgeButton setFrame:CGRectMake(buttonX, buttonY, buttonW, buttonH)];
-    
+    self.badgeButton.badgeValue = self.item.badgeValue;
+  
+    CGRect rect = self.badgeButton.frame;
+    rect.origin.x = self.frame.size.width - self.badgeButton.frame.size.width - 8;
+    rect.origin.y = 1;
+    [self.badgeButton setFrame:rect];
 }
 
 - (void)dealloc

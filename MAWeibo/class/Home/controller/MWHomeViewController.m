@@ -16,18 +16,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    [button setCenter:CGPointMake(200, 200)];
-    [button addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:button];
+
 }
 
-- (void)click
-{
-    NSLog(@"地区为地区");
-}
 
 @end

@@ -73,21 +73,16 @@
 - (void)setupAllChildViewControllers
 {
     MWHomeViewController *home = [[MWHomeViewController alloc]init];
-    home.tabBarItem.badgeValue = @"100";
-    
     [self setupChildViewController:home title:@"首页" WithImageName:@"tabbar_home" SelectImageName:@"tabbar_home_selected"];
     
     MWMessageViewController *message = [[MWMessageViewController alloc]init];
-     message.tabBarItem.badgeValue = @"100";
     [self setupChildViewController:message title:@"消息" WithImageName:@"tabbar_message_center" SelectImageName:@"tabbar_message_center_selected"];
     
     MWDiscoverViewController *discover = [[MWDiscoverViewController alloc]init];
-     discover.tabBarItem.badgeValue = @"100";
     [self setupChildViewController:discover title:@"广场" WithImageName:@"tabbar_discover"SelectImageName:@"tabbar_discover_selected"];
 
     
     MWMeViewController *me = [[MWMeViewController alloc]init];
-     me.tabBarItem.badgeValue = @"100";
     [self setupChildViewController:me title:@"我" WithImageName:@"tabbar_profile" SelectImageName:@"tabbar_profile_selected"];
  
 }

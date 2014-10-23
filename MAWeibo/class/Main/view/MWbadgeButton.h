@@ -10,6 +10,6 @@
 
 @interface MWbadgeButton : UIButton
 
-@property (strong, nonatomic) UITabBarItem *item;
+@property (copy, nonatomic) NSString *badgeValue;
 
 @end
