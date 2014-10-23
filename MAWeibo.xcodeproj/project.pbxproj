@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841CE9EB19F91E6D00E50E30 /* MWbadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CE9EA19F91E6D00E50E30 /* MWbadgeButton.m */; };
 		8450B6AA19F7C9AF00950C7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8450B6A919F7C9AF00950C7E /* Foundation.framework */; };
 		8450B6AC19F7C9AF00950C7E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8450B6AB19F7C9AF00950C7E /* CoreGraphics.framework */; };
 		8450B6AE19F7C9AF00950C7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8450B6AD19F7C9AF00950C7E /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		841CE9E919F91E6D00E50E30 /* MWbadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWbadgeButton.h; sourceTree = "<group>"; };
+		841CE9EA19F91E6D00E50E30 /* MWbadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWbadgeButton.m; sourceTree = "<group>"; };
 		8450B6A619F7C9AF00950C7E /* MAWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8450B6A919F7C9AF00950C7E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8450B6AB19F7C9AF00950C7E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -277,6 +280,8 @@
 				8488073F19F7E94600D8DCEB /* MWTabBar.m */,
 				8488074119F7EE2300D8DCEB /* MWTabBarButton.h */,
 				8488074219F7EE2300D8DCEB /* MWTabBarButton.m */,
+				841CE9E919F91E6D00E50E30 /* MWbadgeButton.h */,
+				841CE9EA19F91E6D00E50E30 /* MWbadgeButton.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -465,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8488074019F7E94600D8DCEB /* MWTabBar.m in Sources */,
+				841CE9EB19F91E6D00E50E30 /* MWbadgeButton.m in Sources */,
 				8488074319F7EE2300D8DCEB /* MWTabBarButton.m in Sources */,
 				8450B70E19F7CF6F00950C7E /* MWMeViewController.m in Sources */,
 				8450B75619F7DD6C00950C7E /* UIImage+MA.m in Sources */,

@@ -34,6 +34,7 @@
 {
     MWTabBarButton *button = [[MWTabBarButton alloc]init];
     button.item = item;
+
     [self addSubview:button];
     [button addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchDown];
     

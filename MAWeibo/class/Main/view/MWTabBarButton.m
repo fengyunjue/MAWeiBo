@@ -13,10 +13,11 @@
 #define  MWTabBarButtonTitleSelectedColor (iOS7 ? MWColor(234, 103, 7) : MWColor(248, 139, 0))
 
 #import "MWTabBarButton.h"
+#import "MWbadgeButton.h"
 
 @interface MWTabBarButton()
 
-@property (weak, nonatomic) UIButton *button;
+@property (weak, nonatomic) MWbadgeButton *badgeButton;
 
 @end
 
@@ -36,12 +37,9 @@
         
      
         
-        UIButton *button = [[UIButton alloc]init];
-           button.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
-        [button setBackgroundImage:[UIImage resizedImageWithName:@"main_badge"] forState:UIControlStateNormal];
-         button.titleLabel.font = [UIFont systemFontOfSize:11];
-        [self addSubview:button];
-        self.button = button;
+        MWbadgeButton *badgeButton = [[MWbadgeButton alloc]init];
+        [self addSubview:badgeButton];
+        self.badgeButton = badgeButton;
     }
     return self;
 }
@@ -94,21 +92,26 @@
     [self setTitle:self.item.title forState:UIControlStateNormal];
     [self setTitle:self.item.title forState:UIControlStateSelected];
     
-    // 设置提示数字
-    [self.button setTitle:self.item.badgeValue forState:UIControlStateNormal];
     
-    CGSize size = [self.item.badgeValue sizeWithFont:self.button.titleLabel.font];
+    
+    self.badgeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
+    [self.badgeButton setBackgroundImage:[UIImage resizedImageWithName:@"main_badge"] forState:UIControlStateNormal];
+    self.badgeButton.titleLabel.font = [UIFont systemFontOfSize:11];
+    // 设置提示数字
+    [self.badgeButton setTitle:self.item.badgeValue forState:UIControlStateNormal];
+    
+    CGSize size = [self.item.badgeValue sizeWithFont:self.badgeButton.titleLabel.font];
     CGFloat buttonW = size.width + 10;
-    CGFloat buttonH = self.button.currentBackgroundImage.size.height;
+    CGFloat buttonH = self.badgeButton.currentBackgroundImage.size.height;
 //    CGFloat buttonY = 5;
 //    CGFloat buttonX = self.frame.size.width - buttonW - 10;
     
 //    CGFloat buttonH = 50;
-    self.button.userInteractionEnabled = NO;
+    self.badgeButton.userInteractionEnabled = NO;
     CGFloat buttonY = 5;
     CGFloat buttonX = 80;
     
-    [self.button setFrame:CGRectMake(buttonX, buttonY, buttonW, buttonH)];
+    [self.badgeButton setFrame:CGRectMake(buttonX, buttonY, buttonW, buttonH)];
     
 }
 
