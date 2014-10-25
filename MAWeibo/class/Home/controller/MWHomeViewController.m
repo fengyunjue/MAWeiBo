@@ -7,6 +7,7 @@
 //
 
 #import "MWHomeViewController.h"
+#import "UIBarButtonItem+MA.h"
 
 @interface MWHomeViewController ()
 
@@ -16,7 +17,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    // 左边按钮
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_friendsearch" highIcon:@"navigationbar_friendsearch_highlighted" target:nil action:nil];
+    
+    // 右边按钮
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_pop" highIcon:@"navigationbar_pop_highlighted" target:nil action:nil];
 }
 
 

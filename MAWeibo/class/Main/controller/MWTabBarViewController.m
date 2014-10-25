@@ -11,6 +11,7 @@
 #import "MWMessageViewController.h"
 #import "MWMeViewController.h"
 #import "MWDiscoverViewController.h"
+#import "MWNavigationController.h"
 
 #import "MWTabBar.h"
 
@@ -105,8 +106,10 @@
     UIImage *selectedImage = [UIImage imageWithName:selectImageName];
     if (iOS7) {
         childVc.tabBarItem.selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    }else {
+        childVc.tabBarItem.selectedImage = selectedImage;
     }
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:childVc];
+    MWNavigationController *nav = [[MWNavigationController alloc]initWithRootViewController:childVc];
     [self addChildViewController:nav];
     
     // 创建按钮

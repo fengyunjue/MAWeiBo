@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		841CE9EB19F91E6D00E50E30 /* MWbadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CE9EA19F91E6D00E50E30 /* MWbadgeButton.m */; };
+		8433FC2C19F9F6750004F60C /* MWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8433FC2B19F9F6750004F60C /* MWNavigationController.m */; };
+		8433FC3219FA023D0004F60C /* UIBarButtonItem+MA.m in Sources */ = {isa = PBXBuildFile; fileRef = 8433FC3119FA023D0004F60C /* UIBarButtonItem+MA.m */; };
 		8450B6AA19F7C9AF00950C7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8450B6A919F7C9AF00950C7E /* Foundation.framework */; };
 		8450B6AC19F7C9AF00950C7E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8450B6AB19F7C9AF00950C7E /* CoreGraphics.framework */; };
 		8450B6AE19F7C9AF00950C7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8450B6AD19F7C9AF00950C7E /* UIKit.framework */; };
@@ -26,6 +28,7 @@
 		8450B71019F7CF6F00950C7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450B70719F7CF6F00950C7E /* main.m */; };
 		8450B71119F7CF6F00950C7E /* MWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450B70A19F7CF6F00950C7E /* MWAppDelegate.m */; };
 		8450B75619F7DD6C00950C7E /* UIImage+MA.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450B75519F7DD6C00950C7E /* UIImage+MA.m */; };
+		846A932519FAB2CE00150BA6 /* MWSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 846A932419FAB2CE00150BA6 /* MWSearchBar.m */; };
 		8488074019F7E94600D8DCEB /* MWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488073F19F7E94600D8DCEB /* MWTabBar.m */; };
 		8488074319F7EE2300D8DCEB /* MWTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488074219F7EE2300D8DCEB /* MWTabBarButton.m */; };
 /* End PBXBuildFile section */
@@ -43,6 +46,10 @@
 /* Begin PBXFileReference section */
 		841CE9E919F91E6D00E50E30 /* MWbadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWbadgeButton.h; sourceTree = "<group>"; };
 		841CE9EA19F91E6D00E50E30 /* MWbadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWbadgeButton.m; sourceTree = "<group>"; };
+		8433FC2A19F9F6750004F60C /* MWNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWNavigationController.h; sourceTree = "<group>"; };
+		8433FC2B19F9F6750004F60C /* MWNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWNavigationController.m; sourceTree = "<group>"; };
+		8433FC3019FA023D0004F60C /* UIBarButtonItem+MA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+MA.h"; sourceTree = "<group>"; };
+		8433FC3119FA023D0004F60C /* UIBarButtonItem+MA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+MA.m"; sourceTree = "<group>"; };
 		8450B6A619F7C9AF00950C7E /* MAWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8450B6A919F7C9AF00950C7E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8450B6AB19F7C9AF00950C7E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,6 +78,8 @@
 		8450B70A19F7CF6F00950C7E /* MWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWAppDelegate.m; sourceTree = "<group>"; };
 		8450B75419F7DD6C00950C7E /* UIImage+MA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MA.h"; sourceTree = "<group>"; };
 		8450B75519F7DD6C00950C7E /* UIImage+MA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MA.m"; sourceTree = "<group>"; };
+		846A932319FAB2CE00150BA6 /* MWSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSearchBar.h; sourceTree = "<group>"; };
+		846A932419FAB2CE00150BA6 /* MWSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSearchBar.m; sourceTree = "<group>"; };
 		8488073E19F7E94600D8DCEB /* MWTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTabBar.h; sourceTree = "<group>"; };
 		8488073F19F7E94600D8DCEB /* MWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTabBar.m; sourceTree = "<group>"; };
 		8488074119F7EE2300D8DCEB /* MWTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTabBarButton.h; sourceTree = "<group>"; };
@@ -210,6 +219,8 @@
 		8450B6ED19F7CF6F00950C7E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				846A932319FAB2CE00150BA6 /* MWSearchBar.h */,
+				846A932419FAB2CE00150BA6 /* MWSearchBar.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -262,6 +273,8 @@
 			children = (
 				8450B6F619F7CF6F00950C7E /* MWTabBarViewController.h */,
 				8450B6F719F7CF6F00950C7E /* MWTabBarViewController.m */,
+				8433FC2A19F9F6750004F60C /* MWNavigationController.h */,
+				8433FC2B19F9F6750004F60C /* MWNavigationController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -369,6 +382,8 @@
 			children = (
 				8450B75419F7DD6C00950C7E /* UIImage+MA.h */,
 				8450B75519F7DD6C00950C7E /* UIImage+MA.m */,
+				8433FC3019FA023D0004F60C /* UIBarButtonItem+MA.h */,
+				8433FC3119FA023D0004F60C /* UIBarButtonItem+MA.m */,
 			);
 			path = cateGory;
 			sourceTree = "<group>";
@@ -470,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8488074019F7E94600D8DCEB /* MWTabBar.m in Sources */,
+				846A932519FAB2CE00150BA6 /* MWSearchBar.m in Sources */,
 				841CE9EB19F91E6D00E50E30 /* MWbadgeButton.m in Sources */,
 				8488074319F7EE2300D8DCEB /* MWTabBarButton.m in Sources */,
 				8450B70E19F7CF6F00950C7E /* MWMeViewController.m in Sources */,
@@ -478,8 +494,10 @@
 				8450B70D19F7CF6F00950C7E /* MWTabBarViewController.m in Sources */,
 				8450B70C19F7CF6F00950C7E /* MWHomeViewController.m in Sources */,
 				8450B71019F7CF6F00950C7E /* main.m in Sources */,
+				8433FC3219FA023D0004F60C /* UIBarButtonItem+MA.m in Sources */,
 				8450B70F19F7CF6F00950C7E /* MWMessageViewController.m in Sources */,
 				8450B71119F7CF6F00950C7E /* MWAppDelegate.m in Sources */,
+				8433FC2C19F9F6750004F60C /* MWNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

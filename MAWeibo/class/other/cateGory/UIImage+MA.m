@@ -18,9 +18,12 @@
     if (iOS7) {
         imageName = [NSString stringWithFormat:@"%@_os7",name];
     }
-    UIImage *image = [UIImage imageNamed:imageName];
     
-    return image;
+    UIImage *image = [UIImage imageNamed:imageName];
+    if (image) {
+        return image;
+    }
+    return [UIImage imageNamed:name];
 }
 
 + (UIImage *)resizedImageWithName:(NSString *)name
