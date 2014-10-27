@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8405ACC719FD0CE600E84C18 /* MWNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACC619FD0CE600E84C18 /* MWNewFeatureViewController.m */; };
+		8405ACCA19FD25A000E84C18 /* MWTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACC919FD25A000E84C18 /* MWTitleButton.m */; };
+		8405ACD219FE425700E84C18 /* MWOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACD119FE425700E84C18 /* MWOAuthViewController.m */; };
+		8405ACE819FE453800E84C18 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACD619FE453800E84C18 /* AFHTTPRequestOperation.m */; };
+		8405ACE919FE453800E84C18 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACD819FE453800E84C18 /* AFHTTPRequestOperationManager.m */; };
+		8405ACEA19FE453800E84C18 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACDA19FE453800E84C18 /* AFHTTPSessionManager.m */; };
+		8405ACEB19FE453800E84C18 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACDD19FE453800E84C18 /* AFNetworkReachabilityManager.m */; };
+		8405ACEC19FE453800E84C18 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACDF19FE453800E84C18 /* AFSecurityPolicy.m */; };
+		8405ACED19FE453800E84C18 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACE119FE453800E84C18 /* AFURLConnectionOperation.m */; };
+		8405ACEE19FE453800E84C18 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACE319FE453800E84C18 /* AFURLRequestSerialization.m */; };
+		8405ACEF19FE453800E84C18 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACE519FE453800E84C18 /* AFURLResponseSerialization.m */; };
+		8405ACF019FE453800E84C18 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACE719FE453800E84C18 /* AFURLSessionManager.m */; };
+		8405ACF319FE553200E84C18 /* MWAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACF219FE553200E84C18 /* MWAccount.m */; };
 		841CE9EB19F91E6D00E50E30 /* MWbadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CE9EA19F91E6D00E50E30 /* MWbadgeButton.m */; };
 		8433FC2C19F9F6750004F60C /* MWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8433FC2B19F9F6750004F60C /* MWNavigationController.m */; };
 		8433FC3219FA023D0004F60C /* UIBarButtonItem+MA.m in Sources */ = {isa = PBXBuildFile; fileRef = 8433FC3119FA023D0004F60C /* UIBarButtonItem+MA.m */; };
@@ -44,6 +57,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8405ACC519FD0CE600E84C18 /* MWNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWNewFeatureViewController.h; path = "MAWeibo/class/NewFeature(新特性)/controller/MWNewFeatureViewController.h"; sourceTree = SOURCE_ROOT; };
+		8405ACC619FD0CE600E84C18 /* MWNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWNewFeatureViewController.m; path = "MAWeibo/class/NewFeature(新特性)/controller/MWNewFeatureViewController.m"; sourceTree = SOURCE_ROOT; };
+		8405ACC819FD25A000E84C18 /* MWTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTitleButton.h; sourceTree = "<group>"; };
+		8405ACC919FD25A000E84C18 /* MWTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTitleButton.m; sourceTree = "<group>"; };
+		8405ACD019FE425700E84C18 /* MWOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWOAuthViewController.h; path = "MAWeibo/class/OAuth(授权)/controller/MWOAuthViewController.h"; sourceTree = SOURCE_ROOT; };
+		8405ACD119FE425700E84C18 /* MWOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWOAuthViewController.m; path = "MAWeibo/class/OAuth(授权)/controller/MWOAuthViewController.m"; sourceTree = SOURCE_ROOT; };
+		8405ACD519FE453800E84C18 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		8405ACD619FE453800E84C18 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		8405ACD719FE453800E84C18 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		8405ACD819FE453800E84C18 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		8405ACD919FE453800E84C18 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		8405ACDA19FE453800E84C18 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		8405ACDB19FE453800E84C18 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		8405ACDC19FE453800E84C18 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		8405ACDD19FE453800E84C18 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		8405ACDE19FE453800E84C18 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		8405ACDF19FE453800E84C18 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		8405ACE019FE453800E84C18 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		8405ACE119FE453800E84C18 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		8405ACE219FE453800E84C18 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		8405ACE319FE453800E84C18 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		8405ACE419FE453800E84C18 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		8405ACE519FE453800E84C18 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		8405ACE619FE453800E84C18 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		8405ACE719FE453800E84C18 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		8405ACF119FE553200E84C18 /* MWAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWAccount.h; path = "MAWeibo/class/OAuth(授权)/model/MWAccount.h"; sourceTree = SOURCE_ROOT; };
+		8405ACF219FE553200E84C18 /* MWAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWAccount.m; path = "MAWeibo/class/OAuth(授权)/model/MWAccount.m"; sourceTree = SOURCE_ROOT; };
 		841CE9E919F91E6D00E50E30 /* MWbadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWbadgeButton.h; sourceTree = "<group>"; };
 		841CE9EA19F91E6D00E50E30 /* MWbadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWbadgeButton.m; sourceTree = "<group>"; };
 		8433FC2A19F9F6750004F60C /* MWNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWNavigationController.h; sourceTree = "<group>"; };
@@ -110,6 +150,110 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8405ACC119FD0C6C00E84C18 /* NewFeature(新特性) */ = {
+			isa = PBXGroup;
+			children = (
+				8405ACC219FD0C6C00E84C18 /* controller */,
+				8405ACC319FD0C6C00E84C18 /* model */,
+				8405ACC419FD0C6C00E84C18 /* view */,
+			);
+			name = "NewFeature(新特性)";
+			path = "NewGeature(新特性)";
+			sourceTree = "<group>";
+		};
+		8405ACC219FD0C6C00E84C18 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				8405ACC519FD0CE600E84C18 /* MWNewFeatureViewController.h */,
+				8405ACC619FD0CE600E84C18 /* MWNewFeatureViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		8405ACC319FD0C6C00E84C18 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		8405ACC419FD0C6C00E84C18 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8405ACCC19FE420B00E84C18 /* OAuth(授权) */ = {
+			isa = PBXGroup;
+			children = (
+				8405ACCD19FE420B00E84C18 /* controller */,
+				8405ACCE19FE420B00E84C18 /* model */,
+				8405ACCF19FE420B00E84C18 /* view */,
+			);
+			name = "OAuth(授权)";
+			path = "Aouth(授权)";
+			sourceTree = "<group>";
+		};
+		8405ACCD19FE420B00E84C18 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				8405ACD019FE425700E84C18 /* MWOAuthViewController.h */,
+				8405ACD119FE425700E84C18 /* MWOAuthViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		8405ACCE19FE420B00E84C18 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8405ACF119FE553200E84C18 /* MWAccount.h */,
+				8405ACF219FE553200E84C18 /* MWAccount.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		8405ACCF19FE420B00E84C18 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8405ACD319FE451D00E84C18 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				8405ACD419FE453800E84C18 /* AFNetworking */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		8405ACD419FE453800E84C18 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				8405ACD519FE453800E84C18 /* AFHTTPRequestOperation.h */,
+				8405ACD619FE453800E84C18 /* AFHTTPRequestOperation.m */,
+				8405ACD719FE453800E84C18 /* AFHTTPRequestOperationManager.h */,
+				8405ACD819FE453800E84C18 /* AFHTTPRequestOperationManager.m */,
+				8405ACD919FE453800E84C18 /* AFHTTPSessionManager.h */,
+				8405ACDA19FE453800E84C18 /* AFHTTPSessionManager.m */,
+				8405ACDB19FE453800E84C18 /* AFNetworking.h */,
+				8405ACDC19FE453800E84C18 /* AFNetworkReachabilityManager.h */,
+				8405ACDD19FE453800E84C18 /* AFNetworkReachabilityManager.m */,
+				8405ACDE19FE453800E84C18 /* AFSecurityPolicy.h */,
+				8405ACDF19FE453800E84C18 /* AFSecurityPolicy.m */,
+				8405ACE019FE453800E84C18 /* AFURLConnectionOperation.h */,
+				8405ACE119FE453800E84C18 /* AFURLConnectionOperation.m */,
+				8405ACE219FE453800E84C18 /* AFURLRequestSerialization.h */,
+				8405ACE319FE453800E84C18 /* AFURLRequestSerialization.m */,
+				8405ACE419FE453800E84C18 /* AFURLResponseSerialization.h */,
+				8405ACE519FE453800E84C18 /* AFURLResponseSerialization.m */,
+				8405ACE619FE453800E84C18 /* AFURLSessionManager.h */,
+				8405ACE719FE453800E84C18 /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
 		8450B69D19F7C9AF00950C7E = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +324,8 @@
 		8450B6E719F7CF6F00950C7E /* class */ = {
 			isa = PBXGroup;
 			children = (
+				8405ACCC19FE420B00E84C18 /* OAuth(授权) */,
+				8405ACC119FD0C6C00E84C18 /* NewFeature(新特性) */,
 				8450B6E819F7CF6F00950C7E /* Discover */,
 				8450B6EE19F7CF6F00950C7E /* Home */,
 				8450B6F419F7CF6F00950C7E /* Main */,
@@ -254,6 +400,8 @@
 		8450B6F319F7CF6F00950C7E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				8405ACC819FD25A000E84C18 /* MWTitleButton.h */,
+				8405ACC919FD25A000E84C18 /* MWTitleButton.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -368,6 +516,7 @@
 		8450B70619F7CF6F00950C7E /* other */ = {
 			isa = PBXGroup;
 			children = (
+				8405ACD319FE451D00E84C18 /* Lib */,
 				8450B75319F7DD6C00950C7E /* cateGory */,
 				8450B70719F7CF6F00950C7E /* main.m */,
 				8450B70819F7CF6F00950C7E /* MAWeibo-Prefix.pch */,
@@ -484,19 +633,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8405ACE819FE453800E84C18 /* AFHTTPRequestOperation.m in Sources */,
 				8488074019F7E94600D8DCEB /* MWTabBar.m in Sources */,
 				846A932519FAB2CE00150BA6 /* MWSearchBar.m in Sources */,
 				841CE9EB19F91E6D00E50E30 /* MWbadgeButton.m in Sources */,
 				8488074319F7EE2300D8DCEB /* MWTabBarButton.m in Sources */,
 				8450B70E19F7CF6F00950C7E /* MWMeViewController.m in Sources */,
 				8450B75619F7DD6C00950C7E /* UIImage+MA.m in Sources */,
+				8405ACEA19FE453800E84C18 /* AFHTTPSessionManager.m in Sources */,
 				8450B70B19F7CF6F00950C7E /* MWDiscoverViewController.m in Sources */,
 				8450B70D19F7CF6F00950C7E /* MWTabBarViewController.m in Sources */,
+				8405ACF319FE553200E84C18 /* MWAccount.m in Sources */,
+				8405ACEB19FE453800E84C18 /* AFNetworkReachabilityManager.m in Sources */,
+				8405ACF019FE453800E84C18 /* AFURLSessionManager.m in Sources */,
+				8405ACD219FE425700E84C18 /* MWOAuthViewController.m in Sources */,
 				8450B70C19F7CF6F00950C7E /* MWHomeViewController.m in Sources */,
+				8405ACED19FE453800E84C18 /* AFURLConnectionOperation.m in Sources */,
+				8405ACEF19FE453800E84C18 /* AFURLResponseSerialization.m in Sources */,
+				8405ACC719FD0CE600E84C18 /* MWNewFeatureViewController.m in Sources */,
+				8405ACEE19FE453800E84C18 /* AFURLRequestSerialization.m in Sources */,
 				8450B71019F7CF6F00950C7E /* main.m in Sources */,
 				8433FC3219FA023D0004F60C /* UIBarButtonItem+MA.m in Sources */,
+				8405ACCA19FD25A000E84C18 /* MWTitleButton.m in Sources */,
 				8450B70F19F7CF6F00950C7E /* MWMessageViewController.m in Sources */,
 				8450B71119F7CF6F00950C7E /* MWAppDelegate.m in Sources */,
+				8405ACE919FE453800E84C18 /* AFHTTPRequestOperationManager.m in Sources */,
+				8405ACEC19FE453800E84C18 /* AFSecurityPolicy.m in Sources */,
 				8433FC2C19F9F6750004F60C /* MWNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

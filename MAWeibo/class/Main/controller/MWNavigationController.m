@@ -44,7 +44,7 @@
     NSMutableDictionary *textAttrs  = [NSMutableDictionary dictionary];
     textAttrs[UITextAttributeTextColor] = textAttrs[UITextAttributeTextColor] = iOS7 ? [UIColor orangeColor] : [UIColor grayColor];
     textAttrs[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
-    textAttrs[UITextAttributeFont] = [UIFont boldSystemFontOfSize:13];
+    textAttrs[UITextAttributeFont] = [UIFont boldSystemFontOfSize:iOS7 ? 12 : 14];
     [item setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
     [item setTitleTextAttributes:textAttrs forState:UIControlStateHighlighted];
 

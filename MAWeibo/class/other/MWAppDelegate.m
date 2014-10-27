@@ -8,6 +8,9 @@
 
 #import "MWAppDelegate.h"
 #import "MWTabBarViewController.h"
+#import "MWNewFeatureViewController.h"
+#import "MWNewFeatureViewController.h"
+#import "MWOAuthViewController.h"
 
 @implementation MWAppDelegate
 
@@ -16,10 +19,29 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    MWTabBarViewController *controller = [[MWTabBarViewController alloc]init];
-    [self.window setRootViewController:controller];
-
-    self.window.backgroundColor = [UIColor whiteColor];
+//    NSString *key = @"CFBundleVersion";
+//    
+//    // 取出沙盒中存储的上次使用软件的版本号
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    NSString *lastVersion = [defaults stringForKey:key];
+//    
+//    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[key];
+//    
+//    // 判断使用哪个控制器
+//    if ([lastVersion isEqualToString:currentVersion]) {
+//        application.statusBarHidden = NO;
+//        self.window.rootViewController = [[MWTabBarViewController alloc]init];
+//    }else{
+//        // 新版本
+//        self.window.rootViewController = [[MWNewFeatureViewController alloc]init];
+//        
+//        // 储存新版本
+//        [defaults setObject:currentVersion forKey:key];
+//        // 数据即时写入
+//        [defaults synchronize];
+//    }
+    
+    self.window.rootViewController = [[MWOAuthViewController alloc]init];
     [self.window makeKeyAndVisible];
     return YES;
 }
