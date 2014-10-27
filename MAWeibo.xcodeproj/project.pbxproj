@@ -44,6 +44,10 @@
 		846A932519FAB2CE00150BA6 /* MWSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 846A932419FAB2CE00150BA6 /* MWSearchBar.m */; };
 		8488074019F7E94600D8DCEB /* MWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488073F19F7E94600D8DCEB /* MWTabBar.m */; };
 		8488074319F7EE2300D8DCEB /* MWTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488074219F7EE2300D8DCEB /* MWTabBarButton.m */; };
+		84FA2BA519FE94CC0014E410 /* MWAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA2BA419FE94CC0014E410 /* MWAccountTool.m */; };
+		84FA2BAC19FE9B500014E410 /* MBProgressHUD+MW.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA2BA819FE9B500014E410 /* MBProgressHUD+MW.m */; };
+		84FA2BAD19FE9B500014E410 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84FA2BA919FE9B500014E410 /* MBProgressHUD.bundle */; };
+		84FA2BAE19FE9B500014E410 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA2BAB19FE9B500014E410 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +128,13 @@
 		8488073F19F7E94600D8DCEB /* MWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTabBar.m; sourceTree = "<group>"; };
 		8488074119F7EE2300D8DCEB /* MWTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTabBarButton.h; sourceTree = "<group>"; };
 		8488074219F7EE2300D8DCEB /* MWTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTabBarButton.m; sourceTree = "<group>"; };
+		84FA2BA319FE94CC0014E410 /* MWAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWAccountTool.h; sourceTree = "<group>"; };
+		84FA2BA419FE94CC0014E410 /* MWAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWAccountTool.m; sourceTree = "<group>"; };
+		84FA2BA719FE9B500014E410 /* MBProgressHUD+MW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MW.h"; sourceTree = "<group>"; };
+		84FA2BA819FE9B500014E410 /* MBProgressHUD+MW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MW.m"; sourceTree = "<group>"; };
+		84FA2BA919FE9B500014E410 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		84FA2BAA19FE9B500014E410 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		84FA2BAB19FE9B500014E410 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +198,7 @@
 		8405ACCC19FE420B00E84C18 /* OAuth(授权) */ = {
 			isa = PBXGroup;
 			children = (
+				84FA2BA219FE949D0014E410 /* Tool */,
 				8405ACCD19FE420B00E84C18 /* controller */,
 				8405ACCE19FE420B00E84C18 /* model */,
 				8405ACCF19FE420B00E84C18 /* view */,
@@ -223,6 +235,7 @@
 		8405ACD319FE451D00E84C18 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				84FA2BA619FE9B500014E410 /* MBProgressHUD */,
 				8405ACD419FE453800E84C18 /* AFNetworking */,
 			);
 			path = Lib;
@@ -537,6 +550,28 @@
 			path = cateGory;
 			sourceTree = "<group>";
 		};
+		84FA2BA219FE949D0014E410 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				84FA2BA319FE94CC0014E410 /* MWAccountTool.h */,
+				84FA2BA419FE94CC0014E410 /* MWAccountTool.m */,
+			);
+			name = Tool;
+			path = "MAWeibo/class/OAuth(授权)/Tool";
+			sourceTree = SOURCE_ROOT;
+		};
+		84FA2BA619FE9B500014E410 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				84FA2BA719FE9B500014E410 /* MBProgressHUD+MW.h */,
+				84FA2BA819FE9B500014E410 /* MBProgressHUD+MW.m */,
+				84FA2BA919FE9B500014E410 /* MBProgressHUD.bundle */,
+				84FA2BAA19FE9B500014E410 /* MBProgressHUD.h */,
+				84FA2BAB19FE9B500014E410 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -615,6 +650,7 @@
 			files = (
 				8450B6B419F7C9AF00950C7E /* InfoPlist.strings in Resources */,
 				8450B6BC19F7C9AF00950C7E /* Images.xcassets in Resources */,
+				84FA2BAD19FE9B500014E410 /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,15 +669,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84FA2BAC19FE9B500014E410 /* MBProgressHUD+MW.m in Sources */,
 				8405ACE819FE453800E84C18 /* AFHTTPRequestOperation.m in Sources */,
 				8488074019F7E94600D8DCEB /* MWTabBar.m in Sources */,
 				846A932519FAB2CE00150BA6 /* MWSearchBar.m in Sources */,
 				841CE9EB19F91E6D00E50E30 /* MWbadgeButton.m in Sources */,
 				8488074319F7EE2300D8DCEB /* MWTabBarButton.m in Sources */,
 				8450B70E19F7CF6F00950C7E /* MWMeViewController.m in Sources */,
+				84FA2BAE19FE9B500014E410 /* MBProgressHUD.m in Sources */,
 				8450B75619F7DD6C00950C7E /* UIImage+MA.m in Sources */,
 				8405ACEA19FE453800E84C18 /* AFHTTPSessionManager.m in Sources */,
 				8450B70B19F7CF6F00950C7E /* MWDiscoverViewController.m in Sources */,
+				84FA2BA519FE94CC0014E410 /* MWAccountTool.m in Sources */,
 				8450B70D19F7CF6F00950C7E /* MWTabBarViewController.m in Sources */,
 				8405ACF319FE553200E84C18 /* MWAccount.m in Sources */,
 				8405ACEB19FE453800E84C18 /* AFNetworkReachabilityManager.m in Sources */,

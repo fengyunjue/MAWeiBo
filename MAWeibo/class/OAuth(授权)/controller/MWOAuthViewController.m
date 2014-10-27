@@ -9,6 +9,9 @@
 #import "MWOAuthViewController.h"
 #import "AFNetworking.h"
 #import "MWAccount.h"
+#import "MWAccountTool.h"
+#import "MWTabBarViewController.h"
+#import "MBProgressHUD+MW.h"
 
 @interface MWOAuthViewController ()<UIWebViewDelegate>
 
@@ -30,6 +33,21 @@
     NSURL *url = [NSURL URLWithString:@"https://api.weibo.com/oauth2/authorize?client_id=3337096979&redirect_uri=http://www.baidu.com"];
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];
     [webView loadRequest:request];
+    
+}
+/**
+ *  webView请求开始
+ */
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [MBProgressHUD showMessage:@"哥正在努力加载中"];
+}
+/**
+ *  webView请求结束
+ */
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [MBProgressHUD hideHUD];
 }
 
 /**
@@ -48,6 +66,7 @@
         
         // 3. 发送POST
         [self accessTokenWithCode:code];
+        return NO;
     }
     
     return YES;
@@ -73,17 +92,26 @@
     dict[@"code"] = code;
     dict[@"redirect_uri"] = @"http://www.baidu.com";
     [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"account.data"];
-        
+        // 将用户登录信息保存到文件中去
         MWAccount *account = [MWAccount accountWithDict:responseObject];
+        [MWAccountTool saveAccount:account];
         
-        [NSKeyedArchiver archiveRootObject:account toFile:path];
+        // 隐藏提示窗口
+        [MBProgressHUD hideHUD];
+        
+        // 跳转到主页上
+        [self pushNextViewController];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@",error);
+        MALog(@"%@",error);
     }];
 }
 
+
+- (void)pushNextViewController
+{
+    [UIApplication sharedApplication].keyWindow.rootViewController = [[MWTabBarViewController alloc]init];
+}
 
 
 @end
