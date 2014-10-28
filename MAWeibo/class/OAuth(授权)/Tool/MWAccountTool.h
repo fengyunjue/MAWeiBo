@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class MWAccount;
+#import "MWAccount.h"
 
 @interface MWAccountTool : NSObject
 

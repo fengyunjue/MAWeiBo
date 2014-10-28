@@ -19,7 +19,6 @@
 
 +(MWAccount *)account
 {
-    MALog(@"%@",MWAccountToolFile);
     return [NSKeyedUnarchiver unarchiveObjectWithFile:MWAccountToolFile];
 }
 
