@@ -1,13 +1,13 @@
 //
-//  MW.h
+//  MWStatuse.m
 //  MAWeibo
 //
 //  Created by admin on 14-10-28.
 //  Copyright (c) 2014年 mage. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "MWStatuse.h"
 
-@interface MW : NSObject
+@implementation MWStatuse
 
 @end
