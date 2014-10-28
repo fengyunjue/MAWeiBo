@@ -59,7 +59,7 @@
 		848E63FF19FF1B6000ED48B7 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 848E63EF19FF1B6000ED48B7 /* UIImage+MultiFormat.m */; };
 		848E640019FF1B6000ED48B7 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 848E63F119FF1B6000ED48B7 /* UIImage+WebP.m */; };
 		848E640119FF1B6000ED48B7 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 848E63F319FF1B6000ED48B7 /* UIImageView+WebCache.m */; };
-		84FA2BA519FE94CC0014E410 /* MWAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA2BA419FE94CC0014E410 /* MWAccountTool.m */; };
+		848E640419FF8F0F00ED48B7 /* MWWeiboTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 848E640319FF8F0F00ED48B7 /* MWWeiboTool.m */; };
 		84FA2BAC19FE9B500014E410 /* MBProgressHUD+MW.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA2BA819FE9B500014E410 /* MBProgressHUD+MW.m */; };
 		84FA2BAD19FE9B500014E410 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84FA2BA919FE9B500014E410 /* MBProgressHUD.bundle */; };
 		84FA2BAE19FE9B500014E410 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA2BAB19FE9B500014E410 /* MBProgressHUD.m */; };
@@ -174,8 +174,8 @@
 		848E63F119FF1B6000ED48B7 /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		848E63F219FF1B6000ED48B7 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		848E63F319FF1B6000ED48B7 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
-		84FA2BA319FE94CC0014E410 /* MWAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWAccountTool.h; sourceTree = "<group>"; };
-		84FA2BA419FE94CC0014E410 /* MWAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWAccountTool.m; sourceTree = "<group>"; };
+		848E640219FF8F0F00ED48B7 /* MWWeiboTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWWeiboTool.h; sourceTree = "<group>"; };
+		848E640319FF8F0F00ED48B7 /* MWWeiboTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWWeiboTool.m; sourceTree = "<group>"; };
 		84FA2BA719FE9B500014E410 /* MBProgressHUD+MW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MW.h"; sourceTree = "<group>"; };
 		84FA2BA819FE9B500014E410 /* MBProgressHUD+MW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MW.m"; sourceTree = "<group>"; };
 		84FA2BA919FE9B500014E410 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -244,7 +244,6 @@
 		8405ACCC19FE420B00E84C18 /* OAuth(授权) */ = {
 			isa = PBXGroup;
 			children = (
-				84FA2BA219FE949D0014E410 /* Tool */,
 				8405ACCD19FE420B00E84C18 /* controller */,
 				8405ACCE19FE420B00E84C18 /* model */,
 				8405ACCF19FE420B00E84C18 /* view */,
@@ -584,6 +583,8 @@
 				8450B70819F7CF6F00950C7E /* MAWeibo-Prefix.pch */,
 				8450B70919F7CF6F00950C7E /* MWAppDelegate.h */,
 				8450B70A19F7CF6F00950C7E /* MWAppDelegate.m */,
+				848E640219FF8F0F00ED48B7 /* MWWeiboTool.h */,
+				848E640319FF8F0F00ED48B7 /* MWWeiboTool.m */,
 			);
 			path = other;
 			sourceTree = "<group>";
@@ -634,16 +635,6 @@
 			);
 			path = SDWebImage;
 			sourceTree = "<group>";
-		};
-		84FA2BA219FE949D0014E410 /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				84FA2BA319FE94CC0014E410 /* MWAccountTool.h */,
-				84FA2BA419FE94CC0014E410 /* MWAccountTool.m */,
-			);
-			name = Tool;
-			path = "MAWeibo/class/OAuth(授权)/Tool";
-			sourceTree = SOURCE_ROOT;
 		};
 		84FA2BA619FE9B500014E410 /* MBProgressHUD */ = {
 			isa = PBXGroup;
@@ -773,7 +764,6 @@
 				848E63F719FF1B6000ED48B7 /* SDWebImageCompat.m in Sources */,
 				8405ACEA19FE453800E84C18 /* AFHTTPSessionManager.m in Sources */,
 				8450B70B19F7CF6F00950C7E /* MWDiscoverViewController.m in Sources */,
-				84FA2BA519FE94CC0014E410 /* MWAccountTool.m in Sources */,
 				848E63F819FF1B6000ED48B7 /* SDWebImageDecoder.m in Sources */,
 				848E63FB19FF1B6000ED48B7 /* SDWebImageManager.m in Sources */,
 				8450B70D19F7CF6F00950C7E /* MWTabBarViewController.m in Sources */,
@@ -792,6 +782,7 @@
 				848E63FD19FF1B6000ED48B7 /* UIButton+WebCache.m in Sources */,
 				8433FC3219FA023D0004F60C /* UIBarButtonItem+MA.m in Sources */,
 				8405ACCA19FD25A000E84C18 /* MWTitleButton.m in Sources */,
+				848E640419FF8F0F00ED48B7 /* MWWeiboTool.m in Sources */,
 				8450B70F19F7CF6F00950C7E /* MWMessageViewController.m in Sources */,
 				848E63F619FF1B6000ED48B7 /* SDImageCache.m in Sources */,
 				8450B71119F7CF6F00950C7E /* MWAppDelegate.m in Sources */,

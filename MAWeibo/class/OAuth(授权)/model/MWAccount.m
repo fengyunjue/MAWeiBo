@@ -9,6 +9,8 @@
 
 #import "MWAccount.h"
 
+#define MWAccountToolFile [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"account.data"]
+
 @implementation MWAccount 
 
 - (instancetype)initWithDict:(NSDictionary *)dict
@@ -16,6 +18,7 @@
     self = [super init];
     if (self) {
         [self setValuesForKeysWithDictionary:dict];
+        
     }
     
     return self;
@@ -48,6 +51,21 @@
         self.uid = [aDecoder decodeInt64ForKey:@"uid"];
     }
     return self;
+}
+/**
+ *  存储用户账号信息
+ */
++ (void)saveAccount:(MWAccount *)account
+{
+    [NSKeyedArchiver archiveRootObject:account toFile:MWAccountToolFile];
+}
+/**
+ *  获取用户账号信息
+ */
++(MWAccount *)account
+{
+    NSLog(@"%@",MWAccountToolFile);
+    return [NSKeyedUnarchiver unarchiveObjectWithFile:MWAccountToolFile];
 }
 
 

@@ -7,12 +7,7 @@
 //
 
 #import "MWAppDelegate.h"
-#import "MWTabBarViewController.h"
-#import "MWNewFeatureViewController.h"
-#import "MWNewFeatureViewController.h"
-#import "MWOAuthViewController.h"
-#import "MWAccount.h"
-#import "MWAccountTool.h"
+#import "MWWeiboTool.h"
 
 @implementation MWAppDelegate
 
@@ -21,33 +16,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    NSString *key = @"CFBundleVersion";
-    
-    // 取出沙盒中存储的上次使用软件的版本号
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *lastVersion = [defaults stringForKey:key];
-    
-    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[key];
-    
-
-    MWAccount *account = [MWAccountTool account];
-    
-    if (account != nil) {
-        // 判断使用哪个控制器
-        if ([lastVersion isEqualToString:currentVersion]) {
-            application.statusBarHidden = NO;
-            self.window.rootViewController = [[MWTabBarViewController alloc]init];
-        }else{
-            // 新版本
-            self.window.rootViewController = [[MWNewFeatureViewController alloc]init];
-            // 储存新版本
-            [defaults setObject:currentVersion forKey:key];
-            // 数据即时写入
-            [defaults synchronize];
-        }
-    }else{
-    self.window.rootViewController = [[MWOAuthViewController alloc]init];
-    }
+    self.window.rootViewController = [MWWeiboTool MWWeiboToolDecideLogin];
    
     [self.window makeKeyAndVisible];
     return YES;

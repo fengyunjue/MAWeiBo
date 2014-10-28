@@ -9,9 +9,8 @@
 #import "MWOAuthViewController.h"
 #import "AFNetworking.h"
 #import "MWAccount.h"
-#import "MWAccountTool.h"
-#import "MWTabBarViewController.h"
 #import "MBProgressHUD+MW.h"
+#import "MWWeiboTool.h"
 
 @interface MWOAuthViewController ()<UIWebViewDelegate>
 
@@ -94,23 +93,17 @@
     [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
         // 将用户登录信息保存到文件中去
         MWAccount *account = [MWAccount accountWithDict:responseObject];
-        [MWAccountTool saveAccount:account];
+        [MWAccount saveAccount:account];
         
         // 隐藏提示窗口
         [MBProgressHUD hideHUD];
         
-        // 跳转到主页上
-        [self pushNextViewController];
-        
+        // 跳转到下一个页面
+        [UIApplication sharedApplication].keyWindow.rootViewController = [MWWeiboTool MWWeiboToolDecideNewVersions];
+
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         MALog(@"%@",error);
     }];
-}
-
-
-- (void)pushNextViewController
-{
-    [UIApplication sharedApplication].keyWindow.rootViewController = [[MWTabBarViewController alloc]init];
 }
 
 

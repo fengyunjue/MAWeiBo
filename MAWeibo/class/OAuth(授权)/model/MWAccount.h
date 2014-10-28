@@ -15,9 +15,14 @@
 @property (nonatomic, assign) long long expires_in;
 @property (nonatomic, assign) long long remind_in;
 @property (nonatomic, assign) long long uid;
-
+//初始化信息时
 + (instancetype)accountWithDict:(NSDictionary *)dict;
 - (instancetype)initWithDict:(NSDictionary *)dict;
+
+// 存储用户账号信息
++ (void)saveAccount:(MWAccount *)account;
+// 获取用户账号信息
++ (MWAccount *)account;
 
 @end
 
