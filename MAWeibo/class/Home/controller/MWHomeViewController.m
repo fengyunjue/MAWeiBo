@@ -11,6 +11,7 @@
 #import "MWTitleButton.h"
 #import "AFNetworking.h"
 #import "MWAccountTool.h"
+#import "UIImageView+WebCache.h"
 
 @interface MWHomeViewController ()
 // 微博数据数组
@@ -41,12 +42,12 @@
     
     MWAccount *account = [MWAccountTool account];
     dict[@"access_token"] = account.access_token;
-    dict[@"count"] = @1;
+//    dict[@"count"] = @1;
     
     [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         self.statuses = responseObject[@"statuses"];
-        
+        MALog(@"%@",self.statuses);
         // 刷新表格
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -69,12 +70,14 @@
     static NSString *ID = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     // 取出一条数据
     NSDictionary *dict = self.statuses[indexPath.row];
     cell.textLabel.text = dict[@"text"];
-    MALog(@"%@",dict[@"text"]);
+    cell.detailTextLabel.text = dict[@"user"][@"name"];
+    NSString *urlstr = dict[@"user"][@"profile_image_url"];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:urlstr] placeholderImage:[UIImage imageWithName:@"tabbar_compose_button_highlighted"]];
     return cell;
 }
 
