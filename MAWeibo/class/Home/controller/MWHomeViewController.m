@@ -15,12 +15,12 @@
 #import "MWStatuse.h"
 #import "MWUser.h"
 #import "MJExtension.h"
-
-
+#import "MWHomeCellFrame.h"
+#import "MWHomeCell.h"
 
 @interface MWHomeViewController ()
 // 微博数据数组
-@property (strong, nonatomic)NSArray *statuses;
+@property (strong, nonatomic) NSArray *statusesFrame;
 
 @end
 
@@ -47,12 +47,22 @@
     
     MWAccount *account = [MWAccount account];
     dict[@"access_token"] = account.access_token;
-//    dict[@"count"] = @1;
+//    dict[@"count"] = @2;
     
     [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         // 从数组字典中获取数据模型
-        self.statuses = [MWStatuse objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        NSArray *array = [MWStatuse objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        
+        // 创建Frame模型对象
+        NSMutableArray *statusFrameArray = [NSMutableArray array];
+        for (MWStatuse *stause in array) {
+            MWHomeCellFrame *cellFrame = [[MWHomeCellFrame alloc]init];
+            // 传递微博模型数据
+            cellFrame.statuse = stause;
+            [statusFrameArray addObject:cellFrame];
+        }
+        self.statusesFrame = statusFrameArray;
         // 刷新表格
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -65,27 +75,25 @@
  */
 - (NSInteger )tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.statuses.count;
+    return self.statusesFrame.count;
 }
 /**
  *  代理方法
  */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *ID = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }
-    // 取出一条数据
-    MWStatuse *statuse = self.statuses[indexPath.row];
-    cell.textLabel.text = statuse.text;
-    cell.detailTextLabel.text = statuse.user.name;
-    NSString *urlstr = statuse.user.profile_image_url;
-    [cell.imageView setImageWithURL:[NSURL URLWithString:urlstr] placeholderImage:[UIImage imageWithName:@"tabbar_compose_button_highlighted"]];
+    // 1. 创建cell
+    MWHomeCell *cell = [MWHomeCell cellWithTableView:tableView];
+    
+    // 2. 传递frame模型
+    cell.cellFrame = self.statusesFrame[indexPath.row];
     return cell;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MWHomeCellFrame *cellFrame = self.statusesFrame[indexPath.row];
+    return cellFrame.cellHeight;
+}
 
 /**
  *  初始化界面

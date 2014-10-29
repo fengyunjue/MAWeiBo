@@ -9,25 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @interface MWUser : NSObject
-/**
- *  用户ID
- */
+/**用户ID*/
 @property (nonatomic, copy) NSString *idstr;
-/**
- *  用户昵称
- */
+/**用户昵称*/
 @property (nonatomic, copy) NSString *name;
-/**
- *  用户头像
- */
+/**用户头像*/
 @property (nonatomic, copy) NSString *profile_image_url;
-
+/**
+ *  是否为vip
+ */
+@property (nonatomic, assign, getter = isVip) BOOL vip;
 
 @end
-/*
- "user": {
- "id": 1404376560,
- "name": "zaku"
- "profile_image_url": "http://tp1.sinaimg.cn/1404376560/50/0/1",
- }
- */
