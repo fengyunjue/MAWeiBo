@@ -18,5 +18,7 @@
 
 + (UIImage *)imageWithName:(NSString *)name;
 
++ (UIImage *)resizedImageWithName:(NSString *)name withleft:(CGFloat)left top:(CGFloat)top;
+
 @end
 

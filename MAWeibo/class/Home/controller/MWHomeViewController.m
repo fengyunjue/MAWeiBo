@@ -84,6 +84,7 @@
 {
     // 1. 创建cell
     MWHomeCell *cell = [MWHomeCell cellWithTableView:tableView];
+
     
     // 2. 传递frame模型
     cell.cellFrame = self.statusesFrame[indexPath.row];
@@ -113,6 +114,9 @@
     [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
     [titleButton setFrame:CGRectMake(0, 0, 80, 40)];
     self.navigationItem.titleView = titleButton;
+    
+     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 10, 0);
 }
 
 - (void)titleClick:(MWTitleButton *)titlebutton

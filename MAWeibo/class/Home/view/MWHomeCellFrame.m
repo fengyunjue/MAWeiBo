@@ -28,7 +28,7 @@
     /** 顶部View */
     CGFloat topViewX = 0;
     CGFloat topViewY = 0;
-    CGFloat topViewW = [UIScreen mainScreen].applicationFrame.size.width;
+    CGFloat topViewW = [UIScreen mainScreen].applicationFrame.size.width - 2 * MWStatusTableBorder;
     CGFloat topViewH = 0;
     
     /** 头像 */
@@ -81,27 +81,28 @@
     
     
     /** 转发的微博 */
-    if (self.statuse.reweetStatuse) {
+    if (self.statuse.retweeted_status) {
+//        MALog(@"转发了微博");
         /** 转发微博的顶部View */
         CGFloat retweetTopViewX = contentLabelX;
         CGFloat retweetTopViewY = CGRectGetMaxY(_contentLabelF) + MWStatusTableBorder;
-        CGFloat retweetTopViewW = topViewW;
+        CGFloat retweetTopViewW = topViewW - MWStatusTableBorder * 2;
         CGFloat retweetTopViewH = 0;
         
         /** 转发微博的作者 */
-        CGFloat retweetNameLabelX = MWStatusTableBorder;
-        CGFloat retweetNameLabelY = CGRectGetMaxY(_retweetTopViewF) + MWStatusTableBorder;
-        CGSize retweetNameLabelWH = [self.statuse.reweetStatuse.user.name sizeWithFont:MWHomeReweetStatuseNameFont];;
+        CGFloat retweetNameLabelX = retweetTopViewX;
+        CGFloat retweetNameLabelY = CGRectGetMaxY(_retweetTopViewF) + 2 * MWStatusTableBorder;
+        CGSize retweetNameLabelWH = [[NSString stringWithFormat:@"@%@",self.statuse.retweeted_status.user.name] sizeWithFont:MWHomeReweetStatuseNameFont];
         _retweetNameLabelF = (CGRect){{retweetNameLabelX, retweetNameLabelY},retweetNameLabelWH};
         /** 转发微博的正文 */
         CGFloat retweetContentLabelX = contentLabelX;
         CGFloat retweetContentLabelY = CGRectGetMaxY(_retweetNameLabelF) + MWStatusTableBorder;
-        CGFloat retweetContentLabelMaxW = retweetTopViewW + 2 * MWStatusTableBorder;
-        CGSize retweetContentLabelWH = [self.statuse.source sizeWithFont:MWHomeReweetStatuseContentFont constrainedToSize:CGSizeMake(retweetContentLabelMaxW, MAXFLOAT)];
+        CGFloat retweetContentLabelMaxW = retweetTopViewW - 2 * MWStatusTableBorder;
+        CGSize retweetContentLabelWH = [self.statuse.retweeted_status.text sizeWithFont:MWHomeReweetStatuseContentFont constrainedToSize:CGSizeMake(retweetContentLabelMaxW, MAXFLOAT)];
         _retweetContentLabelF = (CGRect){{retweetContentLabelX, retweetContentLabelY}, retweetContentLabelWH};
         
         /** 转发微博的正文图片 */
-        if (self.statuse.reweetStatuse.thumbnail_pic) {
+        if (self.statuse.retweeted_status.thumbnail_pic) {
             CGFloat retweetphotoViewX = retweetContentLabelX;
             CGFloat retweetphotoViewY = CGRectGetMaxY(_retweetContentLabelF) + MWStatusTableBorder;
             CGFloat retweetphotoViewWH = 60;
@@ -117,21 +118,27 @@
         _retweetTopViewF = CGRectMake(retweetTopViewX, retweetTopViewY, retweetTopViewW, retweetTopViewH);
         
         // 如果有转发微博,topView的高度
-        topViewH = CGRectGetMaxY(_retweetTopViewF) + MWStatusTableBorder ;
+        topViewH = CGRectGetMaxY(_retweetTopViewF);
     }else{
         // 如果没有转发微博,topView的高度
         if (self.statuse.thumbnail_pic) {
-            topViewH = CGRectGetMaxY(_photoViewF) + MWStatusTableBorder ;
+            topViewH = CGRectGetMaxY(_photoViewF) ;
         }else{
-            topViewH = CGRectGetMaxY(_contentLabelF) + MWStatusTableBorder ;
+            topViewH = CGRectGetMaxY(_contentLabelF)  ;
         }
     }
     
-    _topViewF = CGRectMake(topViewX, topViewY, topViewW, topViewH);
+    _topViewF = CGRectMake(topViewX, topViewY, topViewW, topViewH + MWStatusTableBorder);
     
+     /** 微博工具条 */
+    CGFloat statuseToolBarX = topViewX;
+    CGFloat statuseToolBarY = CGRectGetMaxY(_topViewF);
+    CGFloat statuseToolBarW = topViewW;
+    CGFloat statuseToolBarH = 40;
+    _statuseToolBarF = CGRectMake(statuseToolBarX, statuseToolBarY, statuseToolBarW, statuseToolBarH);
     
     /** Cell的高度 */
-    _cellHeight = CGRectGetMaxY(_topViewF) + MWStatusTableBorder;
+    _cellHeight = CGRectGetMaxY(_statuseToolBarF) + MWStatusTableBorder;
 }
 
 @end

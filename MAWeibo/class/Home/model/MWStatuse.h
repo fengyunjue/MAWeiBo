@@ -32,5 +32,5 @@
 @property (strong, nonatomic) MWUser *user;
 
 /**转发的微博*/
-@property (nonatomic, strong) MWStatuse *reweetStatuse;
+@property (nonatomic, strong) MWStatuse *retweeted_status;
 @end

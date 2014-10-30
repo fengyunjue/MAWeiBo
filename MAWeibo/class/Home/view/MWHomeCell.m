@@ -62,6 +62,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        
         // 1. 设置原创View
         [self setupOriginalSubViews];
         
@@ -79,9 +80,15 @@
  */
 -(void)setupOriginalSubViews
 {
+    self.selectedBackgroundView = [[UIView alloc]init];
+    
+    /** 设置cell图片*/
+    self.backgroundColor = MWColor(219, 219, 219);
     
     /** 顶部View */
-    UIImageView *topView = [[UIImageView alloc]initWithImage:[UIImage resizedImageWithName:@"timeline_card_top_background"]];
+    UIImageView *topView = [[UIImageView alloc]init];
+    topView.image = [UIImage resizedImageWithName:@"common_card_top_background"];
+    topView.highlightedImage = [UIImage resizedImageWithName:@"common_card_top_background_highlighted"];
     [self addSubview:topView];
     self.topView = topView;
     
@@ -110,6 +117,7 @@
     /** 时间 */
     UILabel *timeLabel = [[UILabel alloc]init];
     timeLabel.font = MWHomeCellTimeFont;
+    timeLabel.textColor = MWColor(244, 135, 0);
     [self.topView addSubview:timeLabel];
     self.timeLabel = timeLabel;
     
@@ -131,7 +139,7 @@
 - (void)setupRetweetSubViews
 {
     /** 转发微博的顶部View */
-    UIImageView *retweetTopView = [[UIImageView alloc]initWithImage:[UIImage imageWithName:@"timeline_card_top_background"]];
+    UIImageView *retweetTopView = [[UIImageView alloc]initWithImage:[UIImage resizedImageWithName:@"timeline_retweet_background" withleft:0.9 top:0.5]];
     [self addSubview:retweetTopView];
     self.retweetTopView = retweetTopView;
     /** 转发微博的作者 */
@@ -151,12 +159,25 @@
     self.retweetphotoView = retweetphotoView;
 }
 /**
+ *  重写setFrame方法
+ */
+- (void)setFrame:(CGRect)frame
+{
+    frame.origin.x = MWStatusTableBorder;
+    frame.size.width -= MWStatusTableBorder * 2;
+    frame.size.height -= MWStatusTableBorder;
+    frame.origin.y += MWStatusTableBorder;
+    [super setFrame:frame];
+}
+/**
  *  设置工具条
  */
 - (void)setupWeiboSubViews
 {
     /** 微博的工具条 */
     UIImageView *statuseToolBar = [[UIImageView alloc]init];
+    statuseToolBar.image = [UIImage resizedImageWithName:@"common_card_bottom_background"];
+    statuseToolBar.highlightedImage = [UIImage resizedImageWithName:@"common_card_bottom_background_highlighted"];
     [self addSubview:statuseToolBar];
     self.statuseToolBar = statuseToolBar;
 }
@@ -202,12 +223,24 @@
     }else{
         self.vipView.hidden = YES;
     }
+
+    /** 时间 */
+    CGFloat timeLabelX = self.cellFrame.nameLabelF.origin.x;
+    CGFloat timeLabelY = CGRectGetMaxY(self.cellFrame.nameLabelF) + MWStatusTableBorder;
+    CGSize timeLabelWH = [statuse.created_at sizeWithFont:MWHomeCellTimeFont];
+    self.timeLabel.frame = (CGRect){{timeLabelX, timeLabelY}, timeLabelWH};
+    self.timeLabel.text = statuse.created_at;
+
     /** 来源 */
+//    CGFloat sourceLabelX = CGRectGetMaxX(self.timeLabel.frame) + MWStatusTableBorder;
+//    CGFloat sourceLabelY = timeLabelY;
+//    CGSize sourceLabelWH = [statuse.source sizeWithFont:MWHomeCellSourceFont];
+    self.sourceLabel.textColor = [UIColor grayColor];
+//    self.sourceLabel.frame = (CGRect){{sourceLabelX, sourceLabelY}, sourceLabelWH};
     self.sourceLabel.text = statuse.source;
     self.sourceLabel.frame = self.cellFrame.sourceLabelF;
-    /** 时间 */
-    self.timeLabel.text = statuse.created_at;
-    self.timeLabel.frame = self.cellFrame.timeLabelF;
+
+
     /** 正文 */
     self.contentLabel.text = statuse.text;
     self.contentLabel.frame = self.cellFrame.contentLabelF;
@@ -226,27 +259,27 @@
  */
 - (void)setupRetweetData
 {
-    MWStatuse *reweetStatuse = self.cellFrame.statuse.reweetStatuse;
-    MWUser *user = reweetStatuse.user;
+    MWStatuse *retweeted_status = self.cellFrame.statuse.retweeted_status;
+    MWUser *user = retweeted_status.user;
     
     // 1. 父控件
-    if (reweetStatuse) {
+    if (retweeted_status) {
         self.retweetTopView.hidden = NO;
         /** 转发微博的顶部View */
         self.retweetTopView.frame = self.cellFrame.retweetTopViewF;
         
         /** 转发微博的作者 */
-        self.retweetNameLabel.text = user.name;
+        self.retweetNameLabel.text = [NSString stringWithFormat:@"@%@",user.name];
         self.retweetNameLabel.frame = self.cellFrame.retweetNameLabelF;
         
         /** 转发微博的正文 */
-        self.retweetContentLabel.text = reweetStatuse.text;
+        self.retweetContentLabel.text = retweeted_status.text;
         self.retweetContentLabel.frame = self.cellFrame.retweetContentLabelF;
         
         /** 转发微博的正文图片 */
-        if (reweetStatuse.thumbnail_pic) {
+        if (retweeted_status.thumbnail_pic) {
             self.retweetphotoView.hidden = NO;
-            [self.retweetphotoView setImageWithURL:[NSURL URLWithString:reweetStatuse.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
+            [self.retweetphotoView setImageWithURL:[NSURL URLWithString:retweeted_status.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
             self.retweetphotoView.frame = self.cellFrame.retweetphotoViewF;
         }else{
             self.retweetphotoView.hidden = YES;
