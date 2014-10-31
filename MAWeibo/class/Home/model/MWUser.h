@@ -18,6 +18,14 @@
 /**
  *  是否为vip
  */
-@property (nonatomic, assign, getter = isVip) BOOL vip;
+//@property (nonatomic, assign, getter = isVip) BOOL vip;
+/**
+ *  会员等级
+ */
+@property (nonatomic, assign) int mbrank;
+/**
+ *  会员类型
+ */
+@property (nonatomic, assign) int mbtype;
 
 @end

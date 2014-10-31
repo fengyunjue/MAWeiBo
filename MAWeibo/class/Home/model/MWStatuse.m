@@ -8,8 +8,15 @@
 
 #import "MWStatuse.h"
 #import "NSDate+MJ.h"
+#import "MJExtension.h"
+#import "MWPhoto.h"
 
 @implementation MWStatuse
+
+- (NSDictionary *)objectClassInArray
+{
+    return @{@"pic_urls" : [MWPhoto class]};
+}
 
 - (NSString *)created_at
 {

@@ -17,17 +17,19 @@
 /**微博内容*/
 @property (nonatomic, copy) NSString *text;
 /**转发数*/
-@property (nonatomic, assign) long long reposts_count;
+@property (nonatomic, assign) int reposts_count;
 /**评论数*/
-@property (nonatomic, assign) long long comments_count;
+@property (nonatomic, assign) int comments_count;
 /**表态数*/
-@property (nonatomic, assign) long long attitudes_count;
+@property (nonatomic, assign) int attitudes_count;
 /**来源*/
 @property (nonatomic, copy) NSString *source;
 /**微博时间*/
 @property (nonatomic, copy) NSString *created_at;
 /**微博配图*/
-@property (nonatomic, copy) NSString *thumbnail_pic ;
+//@property (nonatomic, copy) NSString *thumbnail_pic ;
+/**微博图片组 (数组中装模型:IWPhoto)*/
+@property (nonatomic, strong) NSArray *pic_urls;
 /**作者*/
 @property (strong, nonatomic) MWUser *user;
 

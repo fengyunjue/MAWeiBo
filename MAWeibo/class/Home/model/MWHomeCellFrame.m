@@ -44,7 +44,7 @@
     _nameLabelF = (CGRect){{nameLabelX, nameLabelY}, nameLabelSize};
     
     /** vip图像 */
-    if (self.statuse.user.isVip) {
+    if (self.statuse.user.mbtype) {
         CGFloat vipViewX = CGRectGetMaxX(_nameLabelF) + MWStatusTableBorder;
         CGFloat vipViewY = nameLabelY;
         CGFloat vipViewWH = 14;
@@ -61,6 +61,7 @@
     CGFloat sourceLabelX = CGRectGetMaxX(_timeLabelF) + MWStatusTableBorder;
     CGFloat sourceLabelY = timeLabelY;
     CGSize sourceLabelWH = [self.statuse.source sizeWithFont:MWHomeCellSourceFont];
+    
     _sourceLabelF = (CGRect){{sourceLabelX, sourceLabelY}, sourceLabelWH};
     
     /** 正文 */
@@ -71,7 +72,7 @@
     _contentLabelF = (CGRect){{contentLabelX, contentLabelY}, contentLabelWH};
     
     /** 正文图片 */
-    if (self.statuse.thumbnail_pic) {
+    if (self.statuse.pic_urls.count) {
         CGFloat photoViewX = contentLabelX;
         CGFloat photoViewY = CGRectGetMaxY(_contentLabelF) + MWStatusTableBorder;
         CGFloat photoViewWH = 60;
@@ -102,7 +103,7 @@
         _retweetContentLabelF = (CGRect){{retweetContentLabelX, retweetContentLabelY}, retweetContentLabelWH};
         
         /** 转发微博的正文图片 */
-        if (self.statuse.retweeted_status.thumbnail_pic) {
+        if (self.statuse.retweeted_status.pic_urls.count) {
             CGFloat retweetphotoViewX = retweetContentLabelX;
             CGFloat retweetphotoViewY = CGRectGetMaxY(_retweetContentLabelF) + MWStatusTableBorder;
             CGFloat retweetphotoViewWH = 60;
@@ -121,7 +122,7 @@
         topViewH = CGRectGetMaxY(_retweetTopViewF);
     }else{
         // 如果没有转发微博,topView的高度
-        if (self.statuse.thumbnail_pic) {
+        if (self.statuse.pic_urls.count) {
             topViewH = CGRectGetMaxY(_photoViewF) ;
         }else{
             topViewH = CGRectGetMaxY(_contentLabelF)  ;

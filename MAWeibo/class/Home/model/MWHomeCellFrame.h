@@ -16,8 +16,6 @@
 
 /**昵称字体*/
 #define MWHomeCellNameFont [UIFont systemFontOfSize:12]
-/**转发微博的昵称字体*/
-#define MWHomeReweetStatuseNameFont [UIFont systemFontOfSize:12]
 
 
 /**时间字体*/
@@ -27,8 +25,12 @@
 
 /**正文字体*/
 #define MWHomeCellContentFont MWHomeCellNameFont
+
+/**转发微博的昵称字体*/
+#define MWHomeReweetStatuseNameFont [UIFont systemFontOfSize:12]
 /**转发微博的正文字体*/
-#define MWHomeReweetStatuseContentFont MWHomeCellNameFont
+#define MWHomeReweetStatuseContentFont [UIFont systemFontOfSize:12]
+
 
 @class MWStatuse;
 @interface MWHomeCellFrame : NSObject

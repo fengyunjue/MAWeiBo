@@ -24,7 +24,6 @@
 		8433FC2C19F9F6750004F60C /* MWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8433FC2B19F9F6750004F60C /* MWNavigationController.m */; };
 		8433FC3219FA023D0004F60C /* UIBarButtonItem+MA.m in Sources */ = {isa = PBXBuildFile; fileRef = 8433FC3119FA023D0004F60C /* UIBarButtonItem+MA.m */; };
 		844004591A0076C500445796 /* MWHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844004581A0076C500445796 /* MWHomeCell.m */; };
-		8440045C1A007CD600445796 /* MWHomeCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440045B1A007CD600445796 /* MWHomeCellFrame.m */; };
 		8450B6AA19F7C9AF00950C7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8450B6A919F7C9AF00950C7E /* Foundation.framework */; };
 		8450B6AC19F7C9AF00950C7E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8450B6AB19F7C9AF00950C7E /* CoreGraphics.framework */; };
 		8450B6AE19F7C9AF00950C7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8450B6AD19F7C9AF00950C7E /* UIKit.framework */; };
@@ -73,6 +72,11 @@
 		84EBD7DD19FFC47A0090A8A3 /* NSObject+MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD7D419FFC47A0090A8A3 /* NSObject+MJMember.m */; };
 		84EBD7E019FFC4B10090A8A3 /* MWStatuse.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD7DF19FFC4B10090A8A3 /* MWStatuse.m */; };
 		84EBD7E319FFC4BB0090A8A3 /* MWUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD7E219FFC4BB0090A8A3 /* MWUser.m */; };
+		84FA229A1A03A07400E7AF6D /* MWstatuseToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA22991A03A07400E7AF6D /* MWstatuseToolBarView.m */; };
+		84FA229D1A03A09700E7AF6D /* MWHomeCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA229C1A03A09700E7AF6D /* MWHomeCellFrame.m */; };
+		84FA22A01A03D25F00E7AF6D /* MWReweetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA229F1A03D25F00E7AF6D /* MWReweetView.m */; };
+		84FA22A31A03DB1100E7AF6D /* MWStatusTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA22A21A03DB1100E7AF6D /* MWStatusTopView.m */; };
+		84FA22A61A03E0DC00E7AF6D /* MWPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA22A51A03E0DC00E7AF6D /* MWPhoto.m */; };
 		84FA2BAC19FE9B500014E410 /* MBProgressHUD+MW.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA2BA819FE9B500014E410 /* MBProgressHUD+MW.m */; };
 		84FA2BAD19FE9B500014E410 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84FA2BA919FE9B500014E410 /* MBProgressHUD.bundle */; };
 		84FA2BAE19FE9B500014E410 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA2BAB19FE9B500014E410 /* MBProgressHUD.m */; };
@@ -124,8 +128,6 @@
 		8433FC3119FA023D0004F60C /* UIBarButtonItem+MA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+MA.m"; sourceTree = "<group>"; };
 		844004571A0076C500445796 /* MWHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWHomeCell.h; sourceTree = "<group>"; };
 		844004581A0076C500445796 /* MWHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWHomeCell.m; sourceTree = "<group>"; };
-		8440045A1A007CD600445796 /* MWHomeCellFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWHomeCellFrame.h; path = ../view/MWHomeCellFrame.h; sourceTree = "<group>"; };
-		8440045B1A007CD600445796 /* MWHomeCellFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWHomeCellFrame.m; path = ../view/MWHomeCellFrame.m; sourceTree = "<group>"; };
 		8450B6A619F7C9AF00950C7E /* MAWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8450B6A919F7C9AF00950C7E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8450B6AB19F7C9AF00950C7E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -216,6 +218,16 @@
 		84EBD7DF19FFC4B10090A8A3 /* MWStatuse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWStatuse.m; sourceTree = "<group>"; };
 		84EBD7E119FFC4BB0090A8A3 /* MWUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWUser.h; sourceTree = "<group>"; };
 		84EBD7E219FFC4BB0090A8A3 /* MWUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWUser.m; sourceTree = "<group>"; };
+		84FA22981A03A07400E7AF6D /* MWstatuseToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWstatuseToolBarView.h; sourceTree = "<group>"; };
+		84FA22991A03A07400E7AF6D /* MWstatuseToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWstatuseToolBarView.m; sourceTree = "<group>"; };
+		84FA229B1A03A09700E7AF6D /* MWHomeCellFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWHomeCellFrame.h; sourceTree = "<group>"; };
+		84FA229C1A03A09700E7AF6D /* MWHomeCellFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWHomeCellFrame.m; sourceTree = "<group>"; };
+		84FA229E1A03D25F00E7AF6D /* MWReweetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWReweetView.h; sourceTree = "<group>"; };
+		84FA229F1A03D25F00E7AF6D /* MWReweetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWReweetView.m; sourceTree = "<group>"; };
+		84FA22A11A03DB1100E7AF6D /* MWStatusTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWStatusTopView.h; sourceTree = "<group>"; };
+		84FA22A21A03DB1100E7AF6D /* MWStatusTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWStatusTopView.m; sourceTree = "<group>"; };
+		84FA22A41A03E0DC00E7AF6D /* MWPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPhoto.h; sourceTree = "<group>"; };
+		84FA22A51A03E0DC00E7AF6D /* MWPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWPhoto.m; sourceTree = "<group>"; };
 		84FA2BA719FE9B500014E410 /* MBProgressHUD+MW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MW.h"; sourceTree = "<group>"; };
 		84FA2BA819FE9B500014E410 /* MBProgressHUD+MW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MW.m"; sourceTree = "<group>"; };
 		84FA2BA919FE9B500014E410 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -493,12 +505,14 @@
 		8450B6F219F7CF6F00950C7E /* model */ = {
 			isa = PBXGroup;
 			children = (
-				8440045A1A007CD600445796 /* MWHomeCellFrame.h */,
-				8440045B1A007CD600445796 /* MWHomeCellFrame.m */,
+				84FA229B1A03A09700E7AF6D /* MWHomeCellFrame.h */,
+				84FA229C1A03A09700E7AF6D /* MWHomeCellFrame.m */,
 				84EBD7DE19FFC4B10090A8A3 /* MWStatuse.h */,
 				84EBD7DF19FFC4B10090A8A3 /* MWStatuse.m */,
 				84EBD7E119FFC4BB0090A8A3 /* MWUser.h */,
 				84EBD7E219FFC4BB0090A8A3 /* MWUser.m */,
+				84FA22A41A03E0DC00E7AF6D /* MWPhoto.h */,
+				84FA22A51A03E0DC00E7AF6D /* MWPhoto.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -510,6 +524,12 @@
 				8405ACC919FD25A000E84C18 /* MWTitleButton.m */,
 				844004571A0076C500445796 /* MWHomeCell.h */,
 				844004581A0076C500445796 /* MWHomeCell.m */,
+				84FA22A11A03DB1100E7AF6D /* MWStatusTopView.h */,
+				84FA22A21A03DB1100E7AF6D /* MWStatusTopView.m */,
+				84FA229E1A03D25F00E7AF6D /* MWReweetView.h */,
+				84FA229F1A03D25F00E7AF6D /* MWReweetView.m */,
+				84FA22981A03A07400E7AF6D /* MWstatuseToolBarView.h */,
+				84FA22991A03A07400E7AF6D /* MWstatuseToolBarView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -820,14 +840,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84FA229D1A03A09700E7AF6D /* MWHomeCellFrame.m in Sources */,
 				84EBD7DA19FFC47A0090A8A3 /* MJTypeEncoding.m in Sources */,
-				8440045C1A007CD600445796 /* MWHomeCellFrame.m in Sources */,
 				84EBD7DC19FFC47A0090A8A3 /* NSObject+MJKeyValue.m in Sources */,
 				848E63FC19FF1B6000ED48B7 /* SDWebImagePrefetcher.m in Sources */,
 				848E63F419FF1B6000ED48B7 /* MKAnnotationView+WebCache.m in Sources */,
 				84FA2BAC19FE9B500014E410 /* MBProgressHUD+MW.m in Sources */,
+				84FA22A31A03DB1100E7AF6D /* MWStatusTopView.m in Sources */,
 				84EBD7D719FFC47A0090A8A3 /* MJMember.m in Sources */,
 				8405ACE819FE453800E84C18 /* AFHTTPRequestOperation.m in Sources */,
+				84FA22A01A03D25F00E7AF6D /* MWReweetView.m in Sources */,
 				8488074019F7E94600D8DCEB /* MWTabBar.m in Sources */,
 				846A932519FAB2CE00150BA6 /* MWSearchBar.m in Sources */,
 				848E63FF19FF1B6000ED48B7 /* UIImage+MultiFormat.m in Sources */,
@@ -852,6 +874,7 @@
 				8450B70D19F7CF6F00950C7E /* MWTabBarViewController.m in Sources */,
 				8405ACF319FE553200E84C18 /* MWAccount.m in Sources */,
 				8405ACEB19FE453800E84C18 /* AFNetworkReachabilityManager.m in Sources */,
+				84FA229A1A03A07400E7AF6D /* MWstatuseToolBarView.m in Sources */,
 				8405ACF019FE453800E84C18 /* AFURLSessionManager.m in Sources */,
 				848E63FA19FF1B6000ED48B7 /* SDWebImageDownloaderOperation.m in Sources */,
 				8405ACD219FE425700E84C18 /* MWOAuthViewController.m in Sources */,
@@ -859,6 +882,7 @@
 				84EBD7DD19FFC47A0090A8A3 /* NSObject+MJMember.m in Sources */,
 				8405ACED19FE453800E84C18 /* AFURLConnectionOperation.m in Sources */,
 				8405ACEF19FE453800E84C18 /* AFURLResponseSerialization.m in Sources */,
+				84FA22A61A03E0DC00E7AF6D /* MWPhoto.m in Sources */,
 				8405ACC719FD0CE600E84C18 /* MWNewFeatureViewController.m in Sources */,
 				84EBD7E019FFC4B10090A8A3 /* MWStatuse.m in Sources */,
 				848E640119FF1B6000ED48B7 /* UIImageView+WebCache.m in Sources */,
