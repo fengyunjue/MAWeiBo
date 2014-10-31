@@ -13,10 +13,30 @@
 @property (nonatomic ,weak) UIButton *reweetButton;
 @property (nonatomic ,weak) UIButton *commentButton;
 @property (nonatomic ,weak) UIButton *likeButton;
+// 按钮中间的分割线
+@property (nonatomic ,weak) UIImageView *lineImageView;
+
+@property (nonatomic, strong) NSMutableArray *buttons;
+@property (nonatomic, strong) NSMutableArray *lines;
 
 @end
 
 @implementation MWstatuseToolBarView
+
+- (NSMutableArray *)buttons
+{
+    if (_buttons == nil) {
+        _buttons = [NSMutableArray array];
+    }
+    return _buttons;
+}
+- (NSMutableArray *)lines
+{
+    if (_lines == nil) {
+        _lines = [NSMutableArray array];
+    }
+    return _lines;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -37,7 +57,15 @@
     self.reweetButton = [self createButtonWithTitle:@"转发" ImageName:@"timeline_icon_retweet" bgImageName:@"timeline_card_leftbottom_highlighted"];
     self.commentButton = [self createButtonWithTitle:@"评论" ImageName:@"timeline_icon_comment" bgImageName:@"timeline_card_middlebottom_highlighted"];
     self.likeButton = [self createButtonWithTitle:@"赞" ImageName:@"timeline_icon_unlike" bgImageName:@"timeline_card_leftbottom_highlighted"];
-   
+    
+    [self createLineImageView];
+    [self createLineImageView];
+}
+- (void)createLineImageView
+{
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageWithName:@"timeline_card_bottom_line"]];
+    [self addSubview:imageView];
+    [self.lines addObject:imageView];
 }
 
 - (UIButton *)createButtonWithTitle:(NSString *)title ImageName:(NSString *)imageName bgImageName:(NSString *)bgImageName
@@ -58,20 +86,35 @@
     // 设置背景图片
     [btn setBackgroundImage:[UIImage resizedImageWithName:bgImageName] forState:UIControlStateHighlighted];
     [self addSubview:btn];
+    
+    [self.buttons addObject:btn];
     return btn;
 }
 
 - (void)layoutSubviews
 {
-    CGFloat btnX = 0;
+
+    CGFloat lineY = 0;
+    CGFloat lineW = 2;
+    CGFloat lineH = self.frame.size.height;
+    
     CGFloat btnY = 0;
-    CGFloat btnW = self.frame.size.width / self.subviews.count;
+    CGFloat btnW = (self.frame.size.width - self.lines.count * lineW) / self.buttons.count;
     CGFloat btnH = self.frame.size.height;
-    for (NSInteger i = 0; i < self.subviews.count; i++) {
-        UIButton *btn = self.subviews[i];
-        btnX = btnW * i;
+    for (NSInteger i = 0; i < self.buttons.count; i++) {
+        UIButton *btn = self.buttons[i];
+       CGFloat btnX = btnW * i + 2;
         btn.frame = CGRectMake(btnX, btnY, btnW, btnH);
     }
+ 
+    for (NSInteger i = 0; i < self.lines.count; i++) {
+        UIImageView *imageView = self.lines[i];
+        // 设置frame
+        UIButton *button = self.buttons[i];
+        CGFloat lineX = CGRectGetMaxX(button.frame);
+        imageView.frame = CGRectMake(lineX, lineY, lineW, lineH);
+    }
+    
 }
 
 - (void)setStatuse:(MWStatuse *)statuse
