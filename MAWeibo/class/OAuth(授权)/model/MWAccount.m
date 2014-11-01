@@ -33,6 +33,7 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.access_token forKey:@"access_token"];
+    [aCoder encodeObject:self.name forKey:@"name"];
     [aCoder encodeInt64:self.expires_in forKey:@"expires_in"];
     [aCoder encodeInt64:self.remind_in forKey:@"remind_in"];
     [aCoder encodeInt64:self.uid forKey:@"uid"];
@@ -50,6 +51,7 @@
         self.remind_in = [aDecoder decodeInt64ForKey:@"remind_in"];
         self.uid = [aDecoder decodeInt64ForKey:@"uid"];
         self.expiresTime = [aDecoder decodeObjectForKey:@"expiresTime"];
+        self.name = [aDecoder decodeObjectForKey:@"name"];
     }
     return self;
 }

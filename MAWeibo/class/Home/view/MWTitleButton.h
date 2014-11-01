@@ -13,4 +13,9 @@
 
 + (instancetype)titleButton;
 
+/**
+ *  根据按钮的标题计算宽度
+ */
+- (CGSize)getSizeWithTitle:(NSString *)title;
+
 @end

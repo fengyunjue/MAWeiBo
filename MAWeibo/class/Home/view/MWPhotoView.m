@@ -42,11 +42,11 @@
     [super layoutSubviews];
 
     //   设置位置在右上角
-//    self.gifView.layer.anchorPoint = CGPointMake(1, 1);
-//    self.gifView.layer.position = CGPointMake(self.frame.size.width, self.frame.size.height);
+    self.gifView.layer.anchorPoint = CGPointMake(1, 1);
+    self.gifView.layer.position = CGPointMake(self.frame.size.width, self.frame.size.height);
     // 设置位置在右下角
-    self.gifView.layer.anchorPoint = CGPointMake(1, 0);
-    self.gifView.layer.position = CGPointMake(self.frame.size.width, 0);
+//    self.gifView.layer.anchorPoint = CGPointMake(1, 0);
+//    self.gifView.layer.position = CGPointMake(self.frame.size.width, 0);
     
 }
 

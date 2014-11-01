@@ -42,6 +42,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.userInteractionEnabled = YES;
         self.image = [UIImage resizedImageWithName:@"common_card_bottom_background"];
         self.highlightedImage = [UIImage resizedImageWithName:@"common_card_bottom_background_highlighted"];
         // 初始化subView

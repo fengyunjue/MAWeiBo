@@ -51,4 +51,22 @@
     
     return CGRectMake(titleX, titleY, titleW, titleH);
 }
+
+- (CGSize)getSizeWithTitle:(NSString *)title
+{
+    CGSize size = [title sizeWithFont:self.titleLabel.font];
+    size.width += MWTitleButtonImageW + 5;
+    return size;
+}
+
+- (void)setTitle:(NSString *)title forState:(UIControlState)state
+{
+    [super setTitle:title forState:state];
+    CGSize size = [self getSizeWithTitle:title];
+    
+    CGRect frame = self.frame;
+    frame.size.width = size.width;
+    self.frame = frame;
+    MALog(@"%@",NSStringFromCGRect(self.frame));
+}
 @end
