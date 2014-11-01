@@ -36,6 +36,7 @@
     [aCoder encodeInt64:self.expires_in forKey:@"expires_in"];
     [aCoder encodeInt64:self.remind_in forKey:@"remind_in"];
     [aCoder encodeInt64:self.uid forKey:@"uid"];
+    [aCoder encodeObject:self.expiresTime forKey:@"expiresTime"];
 }
 
 /**
@@ -48,6 +49,7 @@
         self.expires_in = [aDecoder decodeInt64ForKey:@"expires_in"];
         self.remind_in = [aDecoder decodeInt64ForKey:@"remind_in"];
         self.uid = [aDecoder decodeInt64ForKey:@"uid"];
+        self.expiresTime = [aDecoder decodeObjectForKey:@"expiresTime"];
     }
     return self;
 }
@@ -56,6 +58,10 @@
  */
 + (void)saveAccount:(MWAccount *)account
 {
+    // 计算账号的过期时间
+    NSDate *now = [NSDate date];
+    account.expiresTime = [now dateByAddingTimeInterval:account.expires_in];
+    
     [NSKeyedArchiver archiveRootObject:account toFile:MWAccountToolFile];
 }
 /**
@@ -63,8 +69,16 @@
  */
 +(MWAccount *)account
 {
-    NSLog(@"%@",MWAccountToolFile);
-    return [NSKeyedUnarchiver unarchiveObjectWithFile:MWAccountToolFile];
+//    NSLog(@"%@",MWAccountToolFile);
+    MWAccount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:MWAccountToolFile];
+    
+    // 判断账号是否过期
+    NSDate *now = [NSDate date];
+    if ([now compare:account.expiresTime] == NSOrderedAscending) { // 还没有过期
+        return account;
+    } else { // 过期
+        return nil;
+    }
 }
 
 

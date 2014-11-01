@@ -13,6 +13,7 @@
 
 @property (nonatomic, copy) NSString *access_token;
 @property (nonatomic, assign) long long expires_in;
+@property (nonatomic, strong) NSDate *expiresTime; // 账号的过期时间
 @property (nonatomic, assign) long long remind_in;
 @property (nonatomic, assign) long long uid;
 //初始化信息时
