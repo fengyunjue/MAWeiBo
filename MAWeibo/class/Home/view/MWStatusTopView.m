@@ -13,6 +13,7 @@
 #import "UIImageView+WebCache.h"
 #import "MWReweetView.h"
 #import "MWPhoto.h"
+#import "MWPhotosView.h"
 
 @interface MWStatusTopView()
 /** 头像 */
@@ -28,7 +29,7 @@
 /** 正文 */
 @property (weak,nonatomic) UILabel *contentLabel;
 /** 正文图片 */
-@property (weak,nonatomic) UIImageView *photoView;
+@property (weak,nonatomic) MWPhotosView *photoView;
 
 /** 转发微博的顶部View */
 @property (weak,nonatomic) MWReweetView *retweetTopView;
@@ -41,6 +42,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
+        self.userInteractionEnabled = YES;
+        
         self.image = [UIImage resizedImageWithName:@"common_card_top_background"];
         self.highlightedImage = [UIImage resizedImageWithName:@"common_card_top_background_highlighted"];
         
@@ -80,7 +84,7 @@
         [self addSubview:contentLabel];
         self.contentLabel = contentLabel;
         /** 正文图片 */
-        UIImageView *photoView = [[UIImageView alloc]init];
+        MWPhotosView *photoView = [[MWPhotosView alloc]init];
         [self addSubview:photoView];
         self.photoView = photoView;
         
@@ -125,11 +129,7 @@
     self.timeLabel.text = statuse.created_at;
     
     /** 来源 */
-    //    CGFloat sourceLabelX = CGRectGetMaxX(self.timeLabel.frame) + MWStatusTableBorder;
-    //    CGFloat sourceLabelY = timeLabelY;
-    //    CGSize sourceLabelWH = [statuse.source sizeWithFont:MWHomeCellSourceFont];
     self.sourceLabel.textColor = [UIColor grayColor];
-    //    self.sourceLabel.frame = (CGRect){{sourceLabelX, sourceLabelY}, sourceLabelWH};
     self.sourceLabel.text = statuse.source;
     self.sourceLabel.frame = self.cellFrame.sourceLabelF;
     
@@ -140,8 +140,7 @@
     /** 正文图片 */
     if (statuse.pic_urls.count) {
         self.photoView.hidden = NO;
-        MWPhoto *photo = statuse.pic_urls[0];
-        [self.photoView setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
+        self.photoView.photos = statuse.pic_urls;
         self.photoView.frame = self.cellFrame.photoViewF;
     }else{
         self.photoView.hidden = YES;

@@ -11,7 +11,7 @@
 #import "MWStatuse.h"
 #import "MWUser.h"
 #import "UIImageView+WebCache.h"
-#import "MWPhoto.h"
+#import "MWPhotosView.h"
 
 @interface MWReweetView()
 /** 转发微博的作者 */
@@ -19,7 +19,7 @@
 /** 转发微博的正文 */
 @property (weak,nonatomic) UILabel *retweetContentLabel;
 /** 转发微博的正文图片 */
-@property (weak,nonatomic) UIImageView *retweetphotoView;
+@property (weak,nonatomic) MWPhotosView *retweetphotoView;
 
 @end
 
@@ -29,21 +29,25 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.userInteractionEnabled = YES;
+        
         self.image = [UIImage resizedImageWithName:@"timeline_retweet_background" withleft:0.9 top:0.5];
         /** 转发微博的作者 */
         UILabel *retweetNameLabel = [[UILabel alloc]init];
         retweetNameLabel.font = MWHomeReweetStatuseNameFont;
         retweetNameLabel.textColor = [UIColor orangeColor];
+        retweetNameLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:retweetNameLabel];
         self.retweetNameLabel = retweetNameLabel;
         /** 转发微博的正文 */
         UILabel *retweetContentLabel = [[UILabel alloc]init];
         retweetContentLabel.font = MWHomeReweetStatuseContentFont;
         retweetContentLabel.numberOfLines = 0;
+        retweetContentLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:retweetContentLabel];
         self.retweetContentLabel = retweetContentLabel;
         /** 转发微博的正文图片 */
-        UIImageView *retweetphotoView = [[UIImageView alloc]init];
+        MWPhotosView *retweetphotoView = [[MWPhotosView alloc]init];
         [self addSubview:retweetphotoView];
         self.retweetphotoView = retweetphotoView;
     }
@@ -67,8 +71,7 @@
     /** 转发微博的正文图片 */
     if (retweeted_status.pic_urls.count) {
         self.retweetphotoView.hidden = NO;
-        MWPhoto *photo = retweeted_status.pic_urls[0];
-        [self.retweetphotoView setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
+        self.retweetphotoView.photos = retweeted_status.pic_urls;
         self.retweetphotoView.frame = self.cellFrame.retweetphotoViewF;
     }else{
         self.retweetphotoView.hidden = YES;

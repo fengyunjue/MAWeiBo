@@ -9,6 +9,7 @@
 #import "MWHomeCellFrame.h"
 #import "MWStatuse.h"
 #import "MWUser.h"
+#import "MWPhotosView.h"
 
 
 @implementation MWHomeCellFrame
@@ -75,11 +76,9 @@
     if (self.statuse.pic_urls.count) {
         CGFloat photoViewX = contentLabelX;
         CGFloat photoViewY = CGRectGetMaxY(_contentLabelF) + MWStatusTableBorder;
-        CGFloat photoViewWH = 60;
-        _photoViewF = CGRectMake(photoViewX, photoViewY, photoViewWH, photoViewWH);
+        CGSize photoViewSize = [MWPhotosView MWPhotosViewRectWithImageCount:self.statuse.pic_urls.count];
+        _photoViewF = (CGRect){{photoViewX, photoViewY}, photoViewSize};
     }
-    
-    
     
     /** 转发的微博 */
     if (self.statuse.retweeted_status) {
@@ -106,8 +105,8 @@
         if (self.statuse.retweeted_status.pic_urls.count) {
             CGFloat retweetphotoViewX = retweetContentLabelX;
             CGFloat retweetphotoViewY = CGRectGetMaxY(_retweetContentLabelF) + MWStatusTableBorder;
-            CGFloat retweetphotoViewWH = 60;
-            _retweetphotoViewF = CGRectMake(retweetphotoViewX, retweetphotoViewY, retweetphotoViewWH, retweetphotoViewWH);
+            CGSize retweetphotoViewSize = [MWPhotosView MWPhotosViewRectWithImageCount:self.statuse.retweeted_status.pic_urls.count] ;
+            _retweetphotoViewF = (CGRect){{retweetphotoViewX, retweetphotoViewY},retweetphotoViewSize};
             
             // 如果有图片
             retweetTopViewH = CGRectGetMaxY(_retweetphotoViewF) + MWStatusTableBorder;
