@@ -12,6 +12,7 @@
 #import "MWMeViewController.h"
 #import "MWDiscoverViewController.h"
 #import "MWNavigationController.h"
+#import "MWCompuseViewController.h"
 
 #import "MWTabBar.h"
 
@@ -35,8 +36,6 @@
     
      [self setupAllChildViewControllers];
     
-  
-
 }
 /**
  *  初始化所有子控制器
@@ -66,6 +65,12 @@
 - (void)tabBar:(MWTabBar *)tabBar didselectButtonFrom:(NSInteger)from to:(NSInteger)to
 {
     self.selectedIndex = to;
+}
+
+- (void)tabBarDidClickPlusButton:(MWTabBar *)tabBar
+{
+    MWCompuseViewController *compuseViewController = [[MWCompuseViewController alloc]init];
+    [self presentViewController:compuseViewController animated:YES completion:nil];
 }
 
 /**

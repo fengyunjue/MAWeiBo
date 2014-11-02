@@ -14,6 +14,8 @@
 @optional
 - (void)tabBar:(MWTabBar *)tabBar didselectButtonFrom:(NSInteger)from to:(NSInteger)to;
 
+- (void)tabBarDidClickPlusButton:(MWTabBar *)tabBar;
+
 @end
 
 @interface MWTabBar : UIView

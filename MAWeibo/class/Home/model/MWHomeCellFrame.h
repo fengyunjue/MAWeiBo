@@ -8,28 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-/** 视图间的间距 */
-#define MWStatusTableBorder 5
 
-/** Cell间的间距 */
-#define MWStatusCellBorder 5
-
-/**昵称字体*/
-#define MWHomeCellNameFont [UIFont systemFontOfSize:12]
-
-
-/**时间字体*/
-#define MWHomeCellTimeFont MWHomeCellNameFont
-/**来源字体*/
-#define MWHomeCellSourceFont MWHomeCellNameFont
-
-/**正文字体*/
-#define MWHomeCellContentFont MWHomeCellNameFont
-
-/**转发微博的昵称字体*/
-#define MWHomeReweetStatuseNameFont [UIFont systemFontOfSize:12]
-/**转发微博的正文字体*/
-#define MWHomeReweetStatuseContentFont [UIFont systemFontOfSize:12]
 
 
 @class MWStatuse;

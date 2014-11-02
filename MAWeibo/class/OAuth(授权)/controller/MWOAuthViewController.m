@@ -12,6 +12,7 @@
 #import "MBProgressHUD+MW.h"
 #import "MWWeiboTool.h"
 
+
 @interface MWOAuthViewController ()<UIWebViewDelegate>
 
 @end
@@ -28,8 +29,8 @@
     
     [self.view addSubview:webView];
     
-    // 2. 加载授权页面(新浪提供的登录页面)
-    NSURL *url = [NSURL URLWithString:@"https://api.weibo.com/oauth2/authorize?client_id=3337096979&redirect_uri=http://www.baidu.com"];
+    // 2. 加载授权页面(新浪提供的登录页面)MWAuthorize
+    NSURL *url = [NSURL URLWithString:MWAuthorize];
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];
     [webView loadRequest:request];
     
@@ -85,11 +86,11 @@
     
     // 2. 封装请求参数
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[@"client_id"] = @"3337096979";
-    dict[@"client_secret"] = @"d6a9fe07e7cc5876ac1ef6e67c64394c";
+    dict[@"client_id"] = MWAppKey;
+    dict[@"client_secret"] = MWAppSecret;
     dict[@"grant_type"] = @"authorization_code";
     dict[@"code"] = code;
-    dict[@"redirect_uri"] = @"http://www.baidu.com";
+    dict[@"redirect_uri"] = MWRedirectURL;
     [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
         // 将用户登录信息保存到文件中去
         MWAccount *account = [MWAccount accountWithDict:responseObject];

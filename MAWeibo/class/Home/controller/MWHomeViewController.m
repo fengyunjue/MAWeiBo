@@ -17,10 +17,11 @@
 #import "MJExtension.h"
 #import "MWHomeCellFrame.h"
 #import "MWHomeCell.h"
+#import "MJRefresh.h"
 
 @interface MWHomeViewController ()
 // 微博数据数组
-@property (strong, nonatomic) NSArray *statusesFrame;
+@property (strong, nonatomic) NSMutableArray *statusesFrame;
 // 用户名按钮
 @property (nonatomic ,weak) MWTitleButton *titleButton;
 
@@ -76,7 +77,55 @@
     // 第一次进入刷新数据
     [refreshControl beginRefreshing];
     [self refreshView:refreshControl];
+    
+    [self.tableView addFooterWithTarget:self action:@selector(footerValue)];
 }
+
+- (void)footerValue
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    // 2. 封装请求参数
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    MWAccount *account = [MWAccount account];
+    dict[@"access_token"] = account.access_token;
+    dict[@"count"] = @10;
+    if (self.statusesFrame.count) {
+    MWHomeCellFrame *cellFrame = [self.statusesFrame lastObject];
+    long long Maxid = [cellFrame.statuse.idstr longLongValue];
+    dict[@"max_id"] = @(Maxid - 1);
+    }
+    [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        // 从数组字典中获取数据模型
+        NSArray *array = [MWStatuse objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        
+        // 创建Frame模型对象
+        NSMutableArray *statusFrameArray = [NSMutableArray array];
+        for (MWStatuse *stause in array) {
+            MWHomeCellFrame *cellFrame = [[MWHomeCellFrame alloc]init];
+            // 传递微博模型数据
+            cellFrame.statuse = stause;
+            [statusFrameArray addObject:cellFrame];
+        }
+        // 将旧元素加入数组
+        [self.statusesFrame addObjectsFromArray:statusFrameArray];
+        
+        // 刷新表格
+        [self.tableView reloadData];
+        
+        // 让刷新控件停止显示刷新状态
+        [self.tableView footerEndRefreshing];
+        
+        // 提示用户更新了多少新微博
+        [self showStatueCount:statusFrameArray.count];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        // 让刷新控件停止显示刷新状态
+         [self.tableView footerEndRefreshing];
+        MALog(@"%@",error);
+    }];
+}
+
 
 - (void)refreshView:(UIRefreshControl *)refreshControl
 {
@@ -86,6 +135,7 @@
     
     MWAccount *account = [MWAccount account];
     dict[@"access_token"] = account.access_token;
+    dict[@"count"] = @10;
     if (self.statusesFrame.count) {
         MWHomeCellFrame *cellFrame = self.statusesFrame[0];
         dict[@"since_id"] = cellFrame.statuse.idstr;

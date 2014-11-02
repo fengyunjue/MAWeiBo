@@ -8,8 +8,6 @@
 
 #import "MWTitleButton.h"
 
-#define MWTitleButtonImageW 20
-
 @implementation MWTitleButton
 
 + (instancetype)titleButton
