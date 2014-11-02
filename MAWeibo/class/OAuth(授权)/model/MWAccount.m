@@ -71,7 +71,7 @@
  */
 +(MWAccount *)account
 {
-    NSLog(@"%@",MWAccountToolFile);
+//    NSLog(@"%@",MWAccountToolFile);
     MWAccount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:MWAccountToolFile];
     
     // 判断账号是否过期

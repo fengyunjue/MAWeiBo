@@ -70,7 +70,8 @@
 - (void)tabBarDidClickPlusButton:(MWTabBar *)tabBar
 {
     MWCompuseViewController *compuseViewController = [[MWCompuseViewController alloc]init];
-    [self presentViewController:compuseViewController animated:YES completion:nil];
+    MWNavigationController *nav = [[MWNavigationController alloc]initWithRootViewController:compuseViewController];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 /**

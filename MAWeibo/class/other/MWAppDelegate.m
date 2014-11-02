@@ -8,6 +8,7 @@
 
 #import "MWAppDelegate.h"
 #import "MWWeiboTool.h"
+#import "SDWebImageManager.h"
 
 @implementation MWAppDelegate
 
@@ -47,6 +48,16 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+/**
+ *  内存警告时调用
+ */
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+    // 停止所有下载
+    [[SDWebImageManager sharedManager] cancelAll];
+    // 清除内存中的图片
+    [[SDWebImageManager sharedManager].imageCache clearMemory];
 }
 
 @end

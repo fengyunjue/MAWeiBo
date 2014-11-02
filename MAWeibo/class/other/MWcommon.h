@@ -44,3 +44,9 @@
 #define MWHomeReweetStatuseNameFont [UIFont systemFontOfSize:12]
 /**转发微博的正文字体*/
 #define MWHomeReweetStatuseContentFont [UIFont systemFontOfSize:12]
+
+// 图片的大小
+#define MWPhotosViewWH 60
+#define MWPhotosViewBorder 5
+
+#define MWNotificationCenter [NSNotificationCenter defaultCenter]

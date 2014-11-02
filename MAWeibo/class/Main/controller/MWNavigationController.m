@@ -42,11 +42,15 @@
     // 设置文字属性
     // 先包装一个字典,然后将字典设置给TitleTextAttribute属性
     NSMutableDictionary *textAttrs  = [NSMutableDictionary dictionary];
-    textAttrs[UITextAttributeTextColor] = textAttrs[UITextAttributeTextColor] = iOS7 ? [UIColor orangeColor] : [UIColor grayColor];
+    textAttrs[UITextAttributeTextColor] = iOS7 ? [UIColor orangeColor] : [UIColor grayColor];
     textAttrs[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
-    textAttrs[UITextAttributeFont] = [UIFont boldSystemFontOfSize:iOS7 ? 12 : 14];
+    textAttrs[UITextAttributeFont] = [UIFont boldSystemFontOfSize:iOS7 ? 15 : 16];
     [item setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
     [item setTitleTextAttributes:textAttrs forState:UIControlStateHighlighted];
+    
+    NSMutableDictionary *textAt  = [NSMutableDictionary dictionary];
+    textAt[UITextAttributeTextColor] = [UIColor lightGrayColor];
+    [item setTitleTextAttributes:textAt forState:UIControlStateDisabled];
 
 }
 /**

@@ -14,8 +14,7 @@
 #import "MJPhoto.h"
 
 
-#define MWPhotosViewWH 60
-#define MWPhotosViewBorder 5
+
 
 @implementation MWPhotosView
 

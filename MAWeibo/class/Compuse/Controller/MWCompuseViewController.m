@@ -7,43 +7,64 @@
 //
 
 #import "MWCompuseViewController.h"
+#import "MWTextView.h"
 
 @interface MWCompuseViewController ()
-
+@property (nonatomic ,weak) MWTextView *textView;
 @end
 
 @implementation MWCompuseViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.view.backgroundColor = [UIColor whiteColor];
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"发送" style:UIBarButtonItemStyleDone target:self action:@selector(send)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(cancel)];
+    self.title = @"发微博";
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+    
+    MWTextView *textView = [[MWTextView alloc]initWithFrame:self.view.frame];
+    textView.font = [UIFont systemFontOfSize:17];
+    [self.view addSubview:textView];
+    self.textView = textView;
+    [MWNotificationCenter addObserver:self selector:@selector(textChanged) name:UITextViewTextDidChangeNotification object:textView];
 }
-
-- (void)didReceiveMemoryWarning
+/**
+ *  textView的文字变化
+ */
+- (void)textChanged
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // 有内容,发送键可以点击
+    self.navigationItem.rightBarButtonItem.enabled = (self.textView.text.length != 0);
+    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+/**
+ *  发送
+ */
+- (void)send
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
 }
-*/
+/**
+ *  取消
+ */
+- (void)cancel
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)dealloc
+{
+    [MWNotificationCenter removeObserver:self];
+}
+/**
+ *  在DidAppear中显示键盘
+ */
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    [self.textView becomeFirstResponder];
+}
 
 @end

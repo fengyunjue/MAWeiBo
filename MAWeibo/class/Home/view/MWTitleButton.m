@@ -65,6 +65,6 @@
     CGRect frame = self.frame;
     frame.size.width = size.width;
     self.frame = frame;
-    MALog(@"%@",NSStringFromCGRect(self.frame));
+//    MALog(@"%@",NSStringFromCGRect(self.frame));
 }
 @end
