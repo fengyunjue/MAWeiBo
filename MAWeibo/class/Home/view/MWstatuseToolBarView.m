@@ -57,7 +57,7 @@
 {
     self.reweetButton = [self createButtonWithTitle:@"转发" ImageName:@"timeline_icon_retweet" bgImageName:@"timeline_card_leftbottom_highlighted"];
     self.commentButton = [self createButtonWithTitle:@"评论" ImageName:@"timeline_icon_comment" bgImageName:@"timeline_card_middlebottom_highlighted"];
-    self.likeButton = [self createButtonWithTitle:@"赞" ImageName:@"timeline_icon_unlike" bgImageName:@"timeline_card_leftbottom_highlighted"];
+    self.likeButton = [self createButtonWithTitle:@"赞" ImageName:@"timeline_icon_unlike" bgImageName:@"timeline_card_rightbottom_highlighted"];
     
     [self createLineImageView];
     [self createLineImageView];
@@ -94,7 +94,6 @@
 
 - (void)layoutSubviews
 {
-
     CGFloat lineY = 0;
     CGFloat lineW = 2;
     CGFloat lineH = self.frame.size.height;
@@ -104,7 +103,7 @@
     CGFloat btnH = self.frame.size.height;
     for (NSInteger i = 0; i < self.buttons.count; i++) {
         UIButton *btn = self.buttons[i];
-       CGFloat btnX = btnW * i + 2;
+        CGFloat btnX = i * (btnW + lineW);
         btn.frame = CGRectMake(btnX, btnY, btnW, btnH);
     }
  
@@ -115,7 +114,6 @@
         CGFloat lineX = CGRectGetMaxX(button.frame);
         imageView.frame = CGRectMake(lineX, lineY, lineW, lineH);
     }
-    
 }
 
 - (void)setStatuse:(MWStatuse *)statuse

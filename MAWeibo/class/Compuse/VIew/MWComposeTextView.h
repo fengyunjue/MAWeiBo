@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MWTextView : UITextView
+@interface MWComposeTextView : UITextView
+
+@property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic, strong) UIColor *placeholderColor;
 
 @end
