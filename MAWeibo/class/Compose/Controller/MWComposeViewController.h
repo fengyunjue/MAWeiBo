@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MWCompuseViewController : UIViewController
+@interface MWComposeViewController : UIViewController
 
 @end

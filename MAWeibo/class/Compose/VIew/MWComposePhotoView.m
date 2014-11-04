@@ -71,6 +71,7 @@
 
 - (void)layoutSubviews
 {
+    [super layoutSubviews];
     CGFloat viewBorder = 5;
     CGFloat imageViewW = 70;
     CGFloat imageViewH = imageViewW;

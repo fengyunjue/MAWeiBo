@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8405ACC719FD0CE600E84C18 /* MWNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACC619FD0CE600E84C18 /* MWNewFeatureViewController.m */; };
 		8405ACCA19FD25A000E84C18 /* MWTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACC919FD25A000E84C18 /* MWTitleButton.m */; };
-		8405ACD219FE425700E84C18 /* MWOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACD119FE425700E84C18 /* MWOAuthViewController.m */; };
 		8405ACE819FE453800E84C18 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACD619FE453800E84C18 /* AFHTTPRequestOperation.m */; };
 		8405ACE919FE453800E84C18 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACD819FE453800E84C18 /* AFHTTPRequestOperationManager.m */; };
 		8405ACEA19FE453800E84C18 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACDA19FE453800E84C18 /* AFHTTPSessionManager.m */; };
@@ -19,7 +18,6 @@
 		8405ACEE19FE453800E84C18 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACE319FE453800E84C18 /* AFURLRequestSerialization.m */; };
 		8405ACEF19FE453800E84C18 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACE519FE453800E84C18 /* AFURLResponseSerialization.m */; };
 		8405ACF019FE453800E84C18 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACE719FE453800E84C18 /* AFURLSessionManager.m */; };
-		8405ACF319FE553200E84C18 /* MWAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405ACF219FE553200E84C18 /* MWAccount.m */; };
 		841CE9EB19F91E6D00E50E30 /* MWbadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CE9EA19F91E6D00E50E30 /* MWbadgeButton.m */; };
 		8433FC2C19F9F6750004F60C /* MWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8433FC2B19F9F6750004F60C /* MWNavigationController.m */; };
 		8433FC3219FA023D0004F60C /* UIBarButtonItem+MA.m in Sources */ = {isa = PBXBuildFile; fileRef = 8433FC3119FA023D0004F60C /* UIBarButtonItem+MA.m */; };
@@ -61,7 +59,6 @@
 		848E640019FF1B6000ED48B7 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 848E63F119FF1B6000ED48B7 /* UIImage+WebP.m */; };
 		848E640119FF1B6000ED48B7 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 848E63F319FF1B6000ED48B7 /* UIImageView+WebCache.m */; };
 		848E640419FF8F0F00ED48B7 /* MWWeiboTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 848E640319FF8F0F00ED48B7 /* MWWeiboTool.m */; };
-		8490C3B11A06640C0000E49A /* MWComposeTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8490C3B01A06640C0000E49A /* MWComposeTextView.m */; };
 		849533681A046A6500BD278E /* MWPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 849533671A046A6500BD278E /* MWPhotoView.m */; };
 		849533791A0486B300BD278E /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 8495336B1A0486B300BD278E /* MJPhoto.m */; };
 		8495337A1A0486B300BD278E /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8495336C1A0486B300BD278E /* MJPhotoBrowser.bundle */; };
@@ -71,10 +68,24 @@
 		8495337E1A0486B300BD278E /* MJPhotoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 849533741A0486B300BD278E /* MJPhotoToolbar.m */; };
 		8495337F1A0486B300BD278E /* MJPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 849533761A0486B300BD278E /* MJPhotoView.m */; };
 		849533801A0486B300BD278E /* SDWebImageManager+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 849533781A0486B300BD278E /* SDWebImageManager+MJ.m */; };
-		84D3FF4B1A079AA00078DD48 /* MWComposeToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3FF4A1A079AA00078DD48 /* MWComposeToolBar.m */; };
-		84D3FFEC1A07B4AF0078DD48 /* IWHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3FFEB1A07B4AF0078DD48 /* IWHttpTool.m */; };
-		84D3FFEF1A07B86A0078DD48 /* MWComposePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3FFEE1A07B86A0078DD48 /* MWComposePhotoView.m */; };
-		84D8112F1A065C3F00BCDBD4 /* MWCompuseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D8112E1A065C3F00BCDBD4 /* MWCompuseViewController.m */; };
+		84A2A1731A08B3170093C511 /* MWHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A1721A08B3170093C511 /* MWHttpTool.m */; };
+		84A2A1771A08B9C80093C511 /* MWStatueTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A1761A08B9C80093C511 /* MWStatueTool.m */; };
+		84A2A17E1A08BA570093C511 /* MWHomeStatueParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A17D1A08BA570093C511 /* MWHomeStatueParam.m */; };
+		84A2A1811A08BA750093C511 /* MWHomeStatueResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A1801A08BA750093C511 /* MWHomeStatueResult.m */; };
+		84A2A1851A08C0F40093C511 /* MWBaseParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A1841A08C0F40093C511 /* MWBaseParam.m */; };
+		84A2A1881A08C8950093C511 /* MWUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A1871A08C8950093C511 /* MWUserTool.m */; };
+		84A2A18C1A08C91C0093C511 /* MWUserInfoParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A18B1A08C91C0093C511 /* MWUserInfoParam.m */; };
+		84A2A18F1A08C9310093C511 /* MWUserInfoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A18E1A08C9310093C511 /* MWUserInfoResult.m */; };
+		84A2A1A91A09205F0093C511 /* MWComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A19B1A09205F0093C511 /* MWComposeViewController.m */; };
+		84A2A1AA1A09205F0093C511 /* MWFormData.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A19E1A09205F0093C511 /* MWFormData.m */; };
+		84A2A1AB1A09205F0093C511 /* MWComposeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A1A11A09205F0093C511 /* MWComposeTool.m */; };
+		84A2A1AC1A09205F0093C511 /* MWComposePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A1A41A09205F0093C511 /* MWComposePhotoView.m */; };
+		84A2A1AD1A09205F0093C511 /* MWComposeTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A1A61A09205F0093C511 /* MWComposeTextView.m */; };
+		84A2A1AE1A09205F0093C511 /* MWComposeToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A1A81A09205F0093C511 /* MWComposeToolBar.m */; };
+		84A2A1B11A0924F10093C511 /* MWComposeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A1B01A0924F10093C511 /* MWComposeParam.m */; };
+		84A2A1B41A0925060093C511 /* MWComposeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A1B31A0925060093C511 /* MWComposeResult.m */; };
+		84A2A1C51A0933160093C511 /* MWOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A1C11A0933160093C511 /* MWOAuthViewController.m */; };
+		84A2A1C61A0933160093C511 /* MWAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A2A1C41A0933160093C511 /* MWAccount.m */; };
 		84D811411A0660A700BCDBD4 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84D811311A0660A700BCDBD4 /* MJRefresh.bundle */; };
 		84D811421A0660A700BCDBD4 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D811341A0660A700BCDBD4 /* MJRefreshBaseView.m */; };
 		84D811431A0660A700BCDBD4 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D811361A0660A700BCDBD4 /* MJRefreshConst.m */; };
@@ -120,8 +131,6 @@
 		8405ACC619FD0CE600E84C18 /* MWNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWNewFeatureViewController.m; path = "MAWeibo/class/NewFeature(新特性)/controller/MWNewFeatureViewController.m"; sourceTree = SOURCE_ROOT; };
 		8405ACC819FD25A000E84C18 /* MWTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTitleButton.h; sourceTree = "<group>"; };
 		8405ACC919FD25A000E84C18 /* MWTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTitleButton.m; sourceTree = "<group>"; };
-		8405ACD019FE425700E84C18 /* MWOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWOAuthViewController.h; path = "MAWeibo/class/OAuth(授权)/controller/MWOAuthViewController.h"; sourceTree = SOURCE_ROOT; };
-		8405ACD119FE425700E84C18 /* MWOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWOAuthViewController.m; path = "MAWeibo/class/OAuth(授权)/controller/MWOAuthViewController.m"; sourceTree = SOURCE_ROOT; };
 		8405ACD519FE453800E84C18 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		8405ACD619FE453800E84C18 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		8405ACD719FE453800E84C18 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -141,8 +150,6 @@
 		8405ACE519FE453800E84C18 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		8405ACE619FE453800E84C18 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		8405ACE719FE453800E84C18 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		8405ACF119FE553200E84C18 /* MWAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWAccount.h; path = "MAWeibo/class/OAuth(授权)/model/MWAccount.h"; sourceTree = SOURCE_ROOT; };
-		8405ACF219FE553200E84C18 /* MWAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWAccount.m; path = "MAWeibo/class/OAuth(授权)/model/MWAccount.m"; sourceTree = SOURCE_ROOT; };
 		841CE9E919F91E6D00E50E30 /* MWbadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWbadgeButton.h; sourceTree = "<group>"; };
 		841CE9EA19F91E6D00E50E30 /* MWbadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWbadgeButton.m; sourceTree = "<group>"; };
 		8433FC2A19F9F6750004F60C /* MWNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWNavigationController.h; sourceTree = "<group>"; };
@@ -218,8 +225,6 @@
 		848E63F319FF1B6000ED48B7 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		848E640219FF8F0F00ED48B7 /* MWWeiboTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWWeiboTool.h; sourceTree = "<group>"; };
 		848E640319FF8F0F00ED48B7 /* MWWeiboTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWWeiboTool.m; sourceTree = "<group>"; };
-		8490C3AF1A06640C0000E49A /* MWComposeTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWComposeTextView.h; sourceTree = "<group>"; };
-		8490C3B01A06640C0000E49A /* MWComposeTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWComposeTextView.m; sourceTree = "<group>"; };
 		849533661A046A6500BD278E /* MWPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPhotoView.h; sourceTree = "<group>"; };
 		849533671A046A6500BD278E /* MWPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWPhotoView.m; sourceTree = "<group>"; };
 		8495336A1A0486B300BD278E /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
@@ -237,15 +242,43 @@
 		849533761A0486B300BD278E /* MJPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoView.m; sourceTree = "<group>"; };
 		849533771A0486B300BD278E /* SDWebImageManager+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDWebImageManager+MJ.h"; sourceTree = "<group>"; };
 		849533781A0486B300BD278E /* SDWebImageManager+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDWebImageManager+MJ.m"; sourceTree = "<group>"; };
-		84D3FF491A079AA00078DD48 /* MWComposeToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWComposeToolBar.h; sourceTree = "<group>"; };
-		84D3FF4A1A079AA00078DD48 /* MWComposeToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWComposeToolBar.m; sourceTree = "<group>"; };
-		84D3FFEA1A07B4AF0078DD48 /* IWHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWHttpTool.h; sourceTree = "<group>"; };
-		84D3FFEB1A07B4AF0078DD48 /* IWHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWHttpTool.m; sourceTree = "<group>"; };
-		84D3FFED1A07B86A0078DD48 /* MWComposePhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWComposePhotoView.h; sourceTree = "<group>"; };
-		84D3FFEE1A07B86A0078DD48 /* MWComposePhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWComposePhotoView.m; sourceTree = "<group>"; };
+		84A2A1711A08B3170093C511 /* MWHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWHttpTool.h; sourceTree = "<group>"; };
+		84A2A1721A08B3170093C511 /* MWHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWHttpTool.m; sourceTree = "<group>"; };
+		84A2A1751A08B9C80093C511 /* MWStatueTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWStatueTool.h; sourceTree = "<group>"; };
+		84A2A1761A08B9C80093C511 /* MWStatueTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWStatueTool.m; sourceTree = "<group>"; };
+		84A2A17C1A08BA570093C511 /* MWHomeStatueParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWHomeStatueParam.h; sourceTree = "<group>"; };
+		84A2A17D1A08BA570093C511 /* MWHomeStatueParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWHomeStatueParam.m; sourceTree = "<group>"; };
+		84A2A17F1A08BA750093C511 /* MWHomeStatueResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWHomeStatueResult.h; sourceTree = "<group>"; };
+		84A2A1801A08BA750093C511 /* MWHomeStatueResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWHomeStatueResult.m; sourceTree = "<group>"; };
+		84A2A1831A08C0F40093C511 /* MWBaseParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBaseParam.h; sourceTree = "<group>"; };
+		84A2A1841A08C0F40093C511 /* MWBaseParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBaseParam.m; sourceTree = "<group>"; };
+		84A2A1861A08C8950093C511 /* MWUserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWUserTool.h; sourceTree = "<group>"; };
+		84A2A1871A08C8950093C511 /* MWUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWUserTool.m; sourceTree = "<group>"; };
+		84A2A18A1A08C91C0093C511 /* MWUserInfoParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWUserInfoParam.h; sourceTree = "<group>"; };
+		84A2A18B1A08C91C0093C511 /* MWUserInfoParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWUserInfoParam.m; sourceTree = "<group>"; };
+		84A2A18D1A08C9310093C511 /* MWUserInfoResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWUserInfoResult.h; sourceTree = "<group>"; };
+		84A2A18E1A08C9310093C511 /* MWUserInfoResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWUserInfoResult.m; sourceTree = "<group>"; };
+		84A2A19A1A09205F0093C511 /* MWComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWComposeViewController.h; sourceTree = "<group>"; };
+		84A2A19B1A09205F0093C511 /* MWComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWComposeViewController.m; sourceTree = "<group>"; };
+		84A2A19D1A09205F0093C511 /* MWFormData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFormData.h; sourceTree = "<group>"; };
+		84A2A19E1A09205F0093C511 /* MWFormData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFormData.m; sourceTree = "<group>"; };
+		84A2A1A01A09205F0093C511 /* MWComposeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWComposeTool.h; sourceTree = "<group>"; };
+		84A2A1A11A09205F0093C511 /* MWComposeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWComposeTool.m; sourceTree = "<group>"; };
+		84A2A1A31A09205F0093C511 /* MWComposePhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWComposePhotoView.h; sourceTree = "<group>"; };
+		84A2A1A41A09205F0093C511 /* MWComposePhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWComposePhotoView.m; sourceTree = "<group>"; };
+		84A2A1A51A09205F0093C511 /* MWComposeTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWComposeTextView.h; sourceTree = "<group>"; };
+		84A2A1A61A09205F0093C511 /* MWComposeTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWComposeTextView.m; sourceTree = "<group>"; };
+		84A2A1A71A09205F0093C511 /* MWComposeToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWComposeToolBar.h; sourceTree = "<group>"; };
+		84A2A1A81A09205F0093C511 /* MWComposeToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWComposeToolBar.m; sourceTree = "<group>"; };
+		84A2A1AF1A0924F10093C511 /* MWComposeParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWComposeParam.h; sourceTree = "<group>"; };
+		84A2A1B01A0924F10093C511 /* MWComposeParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWComposeParam.m; sourceTree = "<group>"; };
+		84A2A1B21A0925060093C511 /* MWComposeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWComposeResult.h; sourceTree = "<group>"; };
+		84A2A1B31A0925060093C511 /* MWComposeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWComposeResult.m; sourceTree = "<group>"; };
+		84A2A1C01A0933160093C511 /* MWOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWOAuthViewController.h; sourceTree = "<group>"; };
+		84A2A1C11A0933160093C511 /* MWOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWOAuthViewController.m; sourceTree = "<group>"; };
+		84A2A1C31A0933160093C511 /* MWAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWAccount.h; sourceTree = "<group>"; };
+		84A2A1C41A0933160093C511 /* MWAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWAccount.m; sourceTree = "<group>"; };
 		84D811261A06562400BCDBD4 /* MWcommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWcommon.h; sourceTree = "<group>"; };
-		84D8112D1A065C3F00BCDBD4 /* MWCompuseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCompuseViewController.h; sourceTree = "<group>"; };
-		84D8112E1A065C3F00BCDBD4 /* MWCompuseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWCompuseViewController.m; sourceTree = "<group>"; };
 		84D811311A0660A700BCDBD4 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		84D811321A0660A700BCDBD4 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		84D811331A0660A700BCDBD4 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
@@ -362,42 +395,6 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		8405ACCC19FE420B00E84C18 /* OAuth(授权) */ = {
-			isa = PBXGroup;
-			children = (
-				8405ACCD19FE420B00E84C18 /* controller */,
-				8405ACCE19FE420B00E84C18 /* model */,
-				8405ACCF19FE420B00E84C18 /* view */,
-			);
-			name = "OAuth(授权)";
-			path = "Aouth(授权)";
-			sourceTree = "<group>";
-		};
-		8405ACCD19FE420B00E84C18 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				8405ACD019FE425700E84C18 /* MWOAuthViewController.h */,
-				8405ACD119FE425700E84C18 /* MWOAuthViewController.m */,
-			);
-			path = controller;
-			sourceTree = "<group>";
-		};
-		8405ACCE19FE420B00E84C18 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				8405ACF119FE553200E84C18 /* MWAccount.h */,
-				8405ACF219FE553200E84C18 /* MWAccount.m */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		8405ACCF19FE420B00E84C18 /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
 		8405ACD319FE451D00E84C18 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,8 +504,8 @@
 		8450B6E719F7CF6F00950C7E /* class */ = {
 			isa = PBXGroup;
 			children = (
-				84D811271A065BBC00BCDBD4 /* Compuse */,
-				8405ACCC19FE420B00E84C18 /* OAuth(授权) */,
+				84A2A1BE1A0933160093C511 /* OAuth(授权) */,
+				84A2A1981A09205F0093C511 /* Compose */,
 				8405ACC119FD0C6C00E84C18 /* NewFeature(新特性) */,
 				8450B6E819F7CF6F00950C7E /* Discover */,
 				8450B6EE19F7CF6F00950C7E /* Home */,
@@ -558,6 +555,7 @@
 		8450B6EE19F7CF6F00950C7E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				84A2A1741A08B9B10093C511 /* Tool */,
 				8450B6EF19F7CF6F00950C7E /* controller */,
 				8450B6F219F7CF6F00950C7E /* model */,
 				8450B6F319F7CF6F00950C7E /* view */,
@@ -577,6 +575,8 @@
 		8450B6F219F7CF6F00950C7E /* model */ = {
 			isa = PBXGroup;
 			children = (
+				84A2A1891A08C8DC0093C511 /* UserInfo */,
+				84A2A17B1A08BA570093C511 /* homeStatue */,
 				84FA229B1A03A09700E7AF6D /* MWHomeCellFrame.h */,
 				84FA229C1A03A09700E7AF6D /* MWHomeCellFrame.m */,
 				84EBD7DE19FFC4B10090A8A3 /* MWStatuse.h */,
@@ -720,6 +720,7 @@
 		8450B70619F7CF6F00950C7E /* other */ = {
 			isa = PBXGroup;
 			children = (
+				84A2A1821A08C0DE0093C511 /* Model */,
 				84D3FFE91A07B4AF0078DD48 /* Tool */,
 				8405ACD319FE451D00E84C18 /* Lib */,
 				8450B75319F7DD6C00950C7E /* cateGory */,
@@ -783,19 +784,6 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
-		8490C3AE1A0663F60000E49A /* VIew */ = {
-			isa = PBXGroup;
-			children = (
-				8490C3AF1A06640C0000E49A /* MWComposeTextView.h */,
-				8490C3B01A06640C0000E49A /* MWComposeTextView.m */,
-				84D3FF491A079AA00078DD48 /* MWComposeToolBar.h */,
-				84D3FF4A1A079AA00078DD48 /* MWComposeToolBar.m */,
-				84D3FFED1A07B86A0078DD48 /* MWComposePhotoView.h */,
-				84D3FFEE1A07B86A0078DD48 /* MWComposePhotoView.m */,
-			);
-			path = VIew;
-			sourceTree = "<group>";
-		};
 		849533691A0486B300BD278E /* MJPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -818,31 +806,145 @@
 			path = MJPhotoBrowser;
 			sourceTree = "<group>";
 		};
-		84D3FFE91A07B4AF0078DD48 /* Tool */ = {
+		84A2A1741A08B9B10093C511 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				84D3FFEA1A07B4AF0078DD48 /* IWHttpTool.h */,
-				84D3FFEB1A07B4AF0078DD48 /* IWHttpTool.m */,
+				84A2A1751A08B9C80093C511 /* MWStatueTool.h */,
+				84A2A1761A08B9C80093C511 /* MWStatueTool.m */,
+				84A2A1861A08C8950093C511 /* MWUserTool.h */,
+				84A2A1871A08C8950093C511 /* MWUserTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
 		};
-		84D811271A065BBC00BCDBD4 /* Compuse */ = {
+		84A2A17B1A08BA570093C511 /* homeStatue */ = {
 			isa = PBXGroup;
 			children = (
-				8490C3AE1A0663F60000E49A /* VIew */,
-				84D8112C1A065C3F00BCDBD4 /* Controller */,
+				84A2A17C1A08BA570093C511 /* MWHomeStatueParam.h */,
+				84A2A17D1A08BA570093C511 /* MWHomeStatueParam.m */,
+				84A2A17F1A08BA750093C511 /* MWHomeStatueResult.h */,
+				84A2A1801A08BA750093C511 /* MWHomeStatueResult.m */,
 			);
-			path = Compuse;
+			path = homeStatue;
 			sourceTree = "<group>";
 		};
-		84D8112C1A065C3F00BCDBD4 /* Controller */ = {
+		84A2A1821A08C0DE0093C511 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				84D8112D1A065C3F00BCDBD4 /* MWCompuseViewController.h */,
-				84D8112E1A065C3F00BCDBD4 /* MWCompuseViewController.m */,
+				84A2A1831A08C0F40093C511 /* MWBaseParam.h */,
+				84A2A1841A08C0F40093C511 /* MWBaseParam.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84A2A1891A08C8DC0093C511 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				84A2A18A1A08C91C0093C511 /* MWUserInfoParam.h */,
+				84A2A18B1A08C91C0093C511 /* MWUserInfoParam.m */,
+				84A2A18D1A08C9310093C511 /* MWUserInfoResult.h */,
+				84A2A18E1A08C9310093C511 /* MWUserInfoResult.m */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		84A2A1981A09205F0093C511 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				84A2A1991A09205F0093C511 /* Controller */,
+				84A2A19C1A09205F0093C511 /* model */,
+				84A2A19F1A09205F0093C511 /* Tool */,
+				84A2A1A21A09205F0093C511 /* VIew */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		84A2A1991A09205F0093C511 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84A2A19A1A09205F0093C511 /* MWComposeViewController.h */,
+				84A2A19B1A09205F0093C511 /* MWComposeViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		84A2A19C1A09205F0093C511 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				84A2A19D1A09205F0093C511 /* MWFormData.h */,
+				84A2A19E1A09205F0093C511 /* MWFormData.m */,
+				84A2A1AF1A0924F10093C511 /* MWComposeParam.h */,
+				84A2A1B01A0924F10093C511 /* MWComposeParam.m */,
+				84A2A1B21A0925060093C511 /* MWComposeResult.h */,
+				84A2A1B31A0925060093C511 /* MWComposeResult.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		84A2A19F1A09205F0093C511 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				84A2A1A01A09205F0093C511 /* MWComposeTool.h */,
+				84A2A1A11A09205F0093C511 /* MWComposeTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		84A2A1A21A09205F0093C511 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				84A2A1A31A09205F0093C511 /* MWComposePhotoView.h */,
+				84A2A1A41A09205F0093C511 /* MWComposePhotoView.m */,
+				84A2A1A51A09205F0093C511 /* MWComposeTextView.h */,
+				84A2A1A61A09205F0093C511 /* MWComposeTextView.m */,
+				84A2A1A71A09205F0093C511 /* MWComposeToolBar.h */,
+				84A2A1A81A09205F0093C511 /* MWComposeToolBar.m */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		84A2A1BE1A0933160093C511 /* OAuth(授权) */ = {
+			isa = PBXGroup;
+			children = (
+				84A2A1C71A09333C0093C511 /* view */,
+				84A2A1BF1A0933160093C511 /* controller */,
+				84A2A1C21A0933160093C511 /* model */,
+			);
+			path = "OAuth(授权)";
+			sourceTree = "<group>";
+		};
+		84A2A1BF1A0933160093C511 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84A2A1C01A0933160093C511 /* MWOAuthViewController.h */,
+				84A2A1C11A0933160093C511 /* MWOAuthViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		84A2A1C21A0933160093C511 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				84A2A1C31A0933160093C511 /* MWAccount.h */,
+				84A2A1C41A0933160093C511 /* MWAccount.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		84A2A1C71A09333C0093C511 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		84D3FFE91A07B4AF0078DD48 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				84A2A1711A08B3170093C511 /* MWHttpTool.h */,
+				84A2A1721A08B3170093C511 /* MWHttpTool.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		84D811301A0660A700BCDBD4 /* MJRefresh */ = {
@@ -1006,33 +1108,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				84FA229D1A03A09700E7AF6D /* MWHomeCellFrame.m in Sources */,
+				84A2A17E1A08BA570093C511 /* MWHomeStatueParam.m in Sources */,
 				84EBD7DA19FFC47A0090A8A3 /* MJTypeEncoding.m in Sources */,
 				84EBD7DC19FFC47A0090A8A3 /* NSObject+MJKeyValue.m in Sources */,
 				849533801A0486B300BD278E /* SDWebImageManager+MJ.m in Sources */,
 				84D811421A0660A700BCDBD4 /* MJRefreshBaseView.m in Sources */,
+				84A2A1AE1A09205F0093C511 /* MWComposeToolBar.m in Sources */,
 				848E63FC19FF1B6000ED48B7 /* SDWebImagePrefetcher.m in Sources */,
 				848E63F419FF1B6000ED48B7 /* MKAnnotationView+WebCache.m in Sources */,
 				84FA2BAC19FE9B500014E410 /* MBProgressHUD+MW.m in Sources */,
+				84A2A1AA1A09205F0093C511 /* MWFormData.m in Sources */,
+				84A2A18F1A08C9310093C511 /* MWUserInfoResult.m in Sources */,
 				84D811471A0660A700BCDBD4 /* UIScrollView+MJRefresh.m in Sources */,
+				84A2A1AD1A09205F0093C511 /* MWComposeTextView.m in Sources */,
 				84D811481A0660A700BCDBD4 /* UIView+MJExtension.m in Sources */,
 				84FA22A31A03DB1100E7AF6D /* MWStatusTopView.m in Sources */,
-				8490C3B11A06640C0000E49A /* MWComposeTextView.m in Sources */,
 				84EBD7D719FFC47A0090A8A3 /* MJMember.m in Sources */,
 				8405ACE819FE453800E84C18 /* AFHTTPRequestOperation.m in Sources */,
 				84FA22A01A03D25F00E7AF6D /* MWReweetView.m in Sources */,
 				8488074019F7E94600D8DCEB /* MWTabBar.m in Sources */,
 				846A932519FAB2CE00150BA6 /* MWSearchBar.m in Sources */,
+				84A2A1AB1A09205F0093C511 /* MWComposeTool.m in Sources */,
 				848E63FF19FF1B6000ED48B7 /* UIImage+MultiFormat.m in Sources */,
 				8495337D1A0486B300BD278E /* MJPhotoProgressView.m in Sources */,
-				84D8112F1A065C3F00BCDBD4 /* MWCompuseViewController.m in Sources */,
 				841CE9EB19F91E6D00E50E30 /* MWbadgeButton.m in Sources */,
 				8488074319F7EE2300D8DCEB /* MWTabBarButton.m in Sources */,
 				84FA22A91A03E6BD00E7AF6D /* MWPhotosView.m in Sources */,
 				844004591A0076C500445796 /* MWHomeCell.m in Sources */,
+				84A2A1B11A0924F10093C511 /* MWComposeParam.m in Sources */,
 				8450B70E19F7CF6F00950C7E /* MWMeViewController.m in Sources */,
+				84A2A1A91A09205F0093C511 /* MWComposeViewController.m in Sources */,
+				84A2A1B41A0925060093C511 /* MWComposeResult.m in Sources */,
+				84A2A1881A08C8950093C511 /* MWUserTool.m in Sources */,
+				84A2A1C51A0933160093C511 /* MWOAuthViewController.m in Sources */,
 				84FA2BAE19FE9B500014E410 /* MBProgressHUD.m in Sources */,
 				848E63F519FF1B6000ED48B7 /* NSData+ImageContentType.m in Sources */,
 				84EBD7D519FFC47A0090A8A3 /* MJArgument.m in Sources */,
+				84A2A18C1A08C91C0093C511 /* MWUserInfoParam.m in Sources */,
 				848E63FE19FF1B6000ED48B7 /* UIImage+GIF.m in Sources */,
 				84EBD7D919FFC47A0090A8A3 /* MJType.m in Sources */,
 				8450B75619F7DD6C00950C7E /* UIImage+MA.m in Sources */,
@@ -1042,25 +1154,25 @@
 				84D811431A0660A700BCDBD4 /* MJRefreshConst.m in Sources */,
 				846EFA3E1A01474900889C9A /* NSDate+MJ.m in Sources */,
 				848E63F719FF1B6000ED48B7 /* SDWebImageCompat.m in Sources */,
-				84D3FFEC1A07B4AF0078DD48 /* IWHttpTool.m in Sources */,
 				8405ACEA19FE453800E84C18 /* AFHTTPSessionManager.m in Sources */,
 				8450B70B19F7CF6F00950C7E /* MWDiscoverViewController.m in Sources */,
 				848E63F819FF1B6000ED48B7 /* SDWebImageDecoder.m in Sources */,
 				848E63FB19FF1B6000ED48B7 /* SDWebImageManager.m in Sources */,
-				84D3FFEF1A07B86A0078DD48 /* MWComposePhotoView.m in Sources */,
 				8450B70D19F7CF6F00950C7E /* MWTabBarViewController.m in Sources */,
 				84D811451A0660A700BCDBD4 /* MJRefreshHeaderView.m in Sources */,
-				8405ACF319FE553200E84C18 /* MWAccount.m in Sources */,
-				84D3FF4B1A079AA00078DD48 /* MWComposeToolBar.m in Sources */,
+				84A2A1AC1A09205F0093C511 /* MWComposePhotoView.m in Sources */,
+				84A2A1811A08BA750093C511 /* MWHomeStatueResult.m in Sources */,
+				84A2A1731A08B3170093C511 /* MWHttpTool.m in Sources */,
+				84A2A1851A08C0F40093C511 /* MWBaseParam.m in Sources */,
 				8405ACEB19FE453800E84C18 /* AFNetworkReachabilityManager.m in Sources */,
 				84FA229A1A03A07400E7AF6D /* MWstatuseToolBarView.m in Sources */,
 				8405ACF019FE453800E84C18 /* AFURLSessionManager.m in Sources */,
 				848E63FA19FF1B6000ED48B7 /* SDWebImageDownloaderOperation.m in Sources */,
-				8405ACD219FE425700E84C18 /* MWOAuthViewController.m in Sources */,
 				8450B70C19F7CF6F00950C7E /* MWHomeViewController.m in Sources */,
 				8495337B1A0486B300BD278E /* MJPhotoBrowser.m in Sources */,
 				84EBD7DD19FFC47A0090A8A3 /* NSObject+MJMember.m in Sources */,
 				8405ACED19FE453800E84C18 /* AFURLConnectionOperation.m in Sources */,
+				84A2A1C61A0933160093C511 /* MWAccount.m in Sources */,
 				8405ACEF19FE453800E84C18 /* AFURLResponseSerialization.m in Sources */,
 				84FA22A61A03E0DC00E7AF6D /* MWPhoto.m in Sources */,
 				8405ACC719FD0CE600E84C18 /* MWNewFeatureViewController.m in Sources */,
@@ -1088,6 +1200,7 @@
 				84D811441A0660A700BCDBD4 /* MJRefreshFooterView.m in Sources */,
 				848E640019FF1B6000ED48B7 /* UIImage+WebP.m in Sources */,
 				8495337C1A0486B300BD278E /* MJPhotoLoadingView.m in Sources */,
+				84A2A1771A08B9C80093C511 /* MWStatueTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,17 +6,18 @@
 //  Copyright (c) 2014年 mage. All rights reserved.
 //
 
-#import "MWCompuseViewController.h"
+#import "MWComposeViewController.h"
 #import "MWComposeTextView.h"
 #import "AFNetworking.h"
 #import "MWAccount.h"
 #import "MBProgressHUD+MW.h"
 #import "MWComposeToolBar.h"
-#import "IWHttpTool.h"
 #import "MWComposePhotoView.h"
+#import "MWFormData.h"
+#import "MWComposeTool.h"
 
 
-@interface MWCompuseViewController ()<UITextViewDelegate, MWComposeToolBarDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MWComposePhotoViewDelegate>
+@interface MWComposeViewController ()<UITextViewDelegate, MWComposeToolBarDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MWComposePhotoViewDelegate>
 // 编写微博视图
 @property (nonatomic ,weak) MWComposeTextView *textView;
 // 工具视图
@@ -25,7 +26,7 @@
 @property (nonatomic ,weak) MWComposePhotoView *imageView;
 @end
 
-@implementation MWCompuseViewController
+@implementation MWComposeViewController
 
 - (void)viewDidLoad
 {
@@ -114,33 +115,34 @@
  */
 - (void)send
 {
-    // 1.创建请求管理对象
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
     // 1. 封装请求参数
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    MWAccount *account = [MWAccount account];
-    dict[@"access_token"] = account.access_token;
-    dict[@"status"] = self.textView.text;
+    MWComposeParam *param = [[MWComposeParam alloc]init];
+    param.status = self.textView.text;
+
     if (self.imageView.images.count) {
-     
         // 2. 发送请求
-        [mgr POST:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:dict constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-            for (UIImageView *imageView in self.imageView.images) {
-                NSData *data = UIImageJPEGRepresentation(imageView.image, 0.0001);
-                [formData appendPartWithFileData:data name:@"pic" fileName:@"" mimeType:@"image/jpeg"];
-            }
-        } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSMutableArray *dataArray = [NSMutableArray arrayWithCapacity:9];
+        for (UIImageView *imageView in self.imageView.images) {
+            NSData *data = UIImageJPEGRepresentation(imageView.image, 0.0001);
+            MWFormData *form = [[MWFormData alloc]init];
+            form.data = data;
+            form.name  = @"pic";
+            form.fileName = @"";
+            form.mimeType = @"image/jpeg";
+            [dataArray addObject:form];
+        }
+        [MWComposeTool composeWithImageWithParam:param dataArray:dataArray success:^(MWComposeResult *result) {
             [MBProgressHUD showSuccess:@"发送成功"];
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSError *error) {
             [MBProgressHUD showError:@"发送失败"];
         }];
     }else{
         // 2. 发送请求
-        [IWHttpTool postWithURL:@"https://api.weibo.com/2/statuses/update.json" params:dict success:^(id json) {
+        [MWComposeTool composeWithoutImageWithParam:param success:^(MWComposeResult *result) {
             [MBProgressHUD showSuccess:@"发送成功"];
         } failure:^(NSError *error) {
             [MBProgressHUD showError:@"发送失败"];
+            MALog(@"%@",error);
         }];
         }
     // 3. 关闭控制器

@@ -12,7 +12,7 @@
 #import "MWMeViewController.h"
 #import "MWDiscoverViewController.h"
 #import "MWNavigationController.h"
-#import "MWCompuseViewController.h"
+#import "MWComposeViewController.h"
 
 #import "MWTabBar.h"
 
@@ -69,7 +69,7 @@
 
 - (void)tabBarDidClickPlusButton:(MWTabBar *)tabBar
 {
-    MWCompuseViewController *compuseViewController = [[MWCompuseViewController alloc]init];
+    MWComposeViewController *compuseViewController = [[MWComposeViewController alloc]init];
     MWNavigationController *nav = [[MWNavigationController alloc]initWithRootViewController:compuseViewController];
     [self presentViewController:nav animated:YES completion:nil];
 }
