@@ -11,6 +11,7 @@
 #import "MWAccount.h"
 #import "MBProgressHUD+MW.h"
 #import "MWWeiboTool.h"
+#import "MWOAuthTool.h"
 
 
 @interface MWOAuthViewController ()<UIWebViewDelegate>
@@ -71,38 +72,24 @@
     
     return YES;
 }
-/**
- *  向新浪服务器发送请求
- client_id	true	string	申请应用时分配的AppKey。
- client_secret	true	string	申请应用时分配的AppSecret。
- grant_type	true	string	请求的类型，填写authorization_code
- code	true	string	调用authorize获得的code值。
- redirect_uri	true	string	回调地址，需需与注册应用里的回调地址一致。
- */
+
 - (void)accessTokenWithCode:(NSString *)code
 {
-    // 1. 创建请求管理器
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
-    // 2. 封装请求参数
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[@"client_id"] = MWAppKey;
-    dict[@"client_secret"] = MWAppSecret;
-    dict[@"grant_type"] = @"authorization_code";
-    dict[@"code"] = code;
-    dict[@"redirect_uri"] = MWRedirectURL;
-    [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    // 1. 封装请求参数
+    MWOAuthParam *param = [[MWOAuthParam alloc]init];
+    param.client_id = MWAppKey;
+    param.client_secret = MWAppSecret;
+    param.code = code;
+    param.redirect_uri = MWRedirectURL;
+    [MWOAuthTool OAuthWithParam:param success:^(MWOAuthResult *result) {
         // 将用户登录信息保存到文件中去
-        MWAccount *account = [MWAccount accountWithDict:responseObject];
-        [MWAccount saveAccount:account];
-        
+        [MWAccount saveAccount:result];
         // 隐藏提示窗口
         [MBProgressHUD hideHUD];
-        
         // 跳转到下一个页面
         [UIApplication sharedApplication].keyWindow.rootViewController = [MWWeiboTool MWWeiboToolDecideNewVersions];
-
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    } failure:^(NSError *error) {
         MALog(@"%@",error);
     }];
 }

@@ -20,6 +20,7 @@
 #import "MWStatueTool.h"
 
 @interface MWHomeViewController ()
+
 // 微博数据数组
 @property (strong, nonatomic) NSMutableArray *statusesFrame;
 // 用户名按钮
@@ -39,8 +40,9 @@
     
     // 3. 获取用户信息
     [self setupUserData];
-
+    
 }
+
 /**
  *  获取用户信息
  */
@@ -76,6 +78,8 @@
  */
 - (void)headerValue
 {
+    // 0. 清除提醒数字
+    self.tabBarItem.badgeValue = nil;
     // 1. 封装请求参数
     MWHomeStatueParam *param = [[MWHomeStatueParam alloc]init];
     param.count = @10;
@@ -257,6 +261,19 @@
         [titlebutton setImage:[UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     }else{
         [titlebutton setImage:[UIImage imageWithName:@"navigationbar_arrow_up"] forState:UIControlStateNormal];
+    }
+}
+
+- (void)dealloc
+{
+   // 防止内存泄漏
+    [MWHomeViewController dealloc];
+}
+
+- (void)refresh
+{
+    if ([self.tabBarItem.badgeValue intValue] != 0) {
+        [self.tableView headerBeginRefreshing];
     }
 }
 

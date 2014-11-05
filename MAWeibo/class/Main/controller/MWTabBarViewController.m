@@ -15,10 +15,18 @@
 #import "MWComposeViewController.h"
 
 #import "MWTabBar.h"
+#import "MWUserTool.h"
+#import "MWAccount.h"
+#import "MWUser.h"
 
 @interface MWTabBarViewController ()<MWTabBarDelegate>
 
 @property (weak, nonatomic) MWTabBar *tabBarView;
+
+@property (nonatomic, weak) MWHomeViewController *home;
+@property (nonatomic, weak) MWMessageViewController *message;
+@property (nonatomic, weak) MWDiscoverViewController *discover;
+@property (nonatomic, weak) MWMeViewController *me;
 
 @end
 
@@ -30,12 +38,30 @@
 {
     [super viewDidLoad];
     
-    // 初始化tabbar
+    // 1 .初始化tabbar
     [self setupTabbar];
     
     
      [self setupAllChildViewControllers];
     
+    // 4. 添加定时器
+    [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(checkUnreadCount) userInfo:nil repeats:YES];
+}
+
+ - (void)checkUnreadCount
+{
+    MWUserUnreadCountParam *param = [[MWUserUnreadCountParam alloc]init];
+    param.uid = @([MWAccount account].uid);
+    [MWUserTool userUnreadCountWithParam:param success:^(MWUserUnreadCountResult *result) {
+        // 1. home的badge
+        self.home.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",result.status];
+        // 2. message的badge
+        self.message.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",result.messageCount];
+        // 3. me的badge
+        self.me.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",result.follower];
+    } failure:^(NSError *error) {
+        
+    }];
 }
 /**
  *  初始化所有子控制器
@@ -52,7 +78,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    // 删除tabbar中的所有子视图
+    // 删除tabbar中的所有系统自带子视图
     for (UIView *child in self.tabBar.subviews) {
         if ([child isKindOfClass:[UIControl class]]) {
             [child removeFromSuperview];
@@ -65,6 +91,9 @@
 - (void)tabBar:(MWTabBar *)tabBar didselectButtonFrom:(NSInteger)from to:(NSInteger)to
 {
     self.selectedIndex = to;
+    if (to == 0) {
+        [self.home refresh];
+    }
 }
 
 - (void)tabBarDidClickPlusButton:(MWTabBar *)tabBar
@@ -81,17 +110,19 @@
 {
     MWHomeViewController *home = [[MWHomeViewController alloc]init];
     [self setupChildViewController:home title:@"首页" WithImageName:@"tabbar_home" SelectImageName:@"tabbar_home_selected"];
+    self.home = home;
     
     MWMessageViewController *message = [[MWMessageViewController alloc]init];
     [self setupChildViewController:message title:@"消息" WithImageName:@"tabbar_message_center" SelectImageName:@"tabbar_message_center_selected"];
+    self.message = message;
     
     MWDiscoverViewController *discover = [[MWDiscoverViewController alloc]init];
     [self setupChildViewController:discover title:@"广场" WithImageName:@"tabbar_discover"SelectImageName:@"tabbar_discover_selected"];
-
+    self.discover = discover;
     
     MWMeViewController *me = [[MWMeViewController alloc]init];
     [self setupChildViewController:me title:@"我" WithImageName:@"tabbar_profile" SelectImageName:@"tabbar_profile_selected"];
- 
+    self.me = me;
 }
 
 /**

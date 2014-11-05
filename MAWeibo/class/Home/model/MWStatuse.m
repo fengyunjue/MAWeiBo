@@ -55,19 +55,18 @@
 
 - (void)setSource:(NSString *)source
 {
-    NSRange range = [source rangeOfString:@">"];
-    NSString *sourceS = [source substringFromIndex:range.length + range.location];
-    NSRange range1 = [sourceS rangeOfString:@"<"];
-    NSString *sourceStr = [sourceS substringToIndex:range1.location];
-//    MALog(@"%@--%@--%@",source,NSStringFromRange(range),sourceStr);
+//    NSRange range = [source rangeOfString:@">"];
+//    NSString *sourceS = [source substringFromIndex:range.length + range.location];
+//    NSRange range1 = [sourceS rangeOfString:@"<"];
+//    NSString *sourceStr = [sourceS substringToIndex:range1.location];
+//    _source = [NSString stringWithFormat:@"来自%@",sourceStr];
+        int loc = [source rangeOfString:@">"].location + 1;
+    int length = [source rangeOfString:@"</"].location - loc;
+    source = [source substringWithRange:NSMakeRange(loc, length)];
+
+    _source = [NSString stringWithFormat:@"来自%@", source];
     
-//        int loc = [source rangeOfString:@">"].location + 1;
-//    int length = [source rangeOfString:@"</"].location - loc;
-//    source = [source substringWithRange:NSMakeRange(loc, length)];
-//
-//    _source = [NSString stringWithFormat:@"来自%@", source];
     
-    _source = [NSString stringWithFormat:@"来自%@",sourceStr];
    
 }
 

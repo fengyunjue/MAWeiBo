@@ -26,7 +26,7 @@
 {
     _badgeValue = [badgeValue copy];
 
-    if (_badgeValue) {
+    if (_badgeValue && [_badgeValue intValue] != 0) {
         // 设置提示数字
         [self setTitle:_badgeValue forState:UIControlStateNormal];
         CGRect frame = self.frame;

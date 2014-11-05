@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface MWHomeViewController : UITableViewController
+/**
+ *  刷新方法
+ */
+- (void)refresh;
 
 @end
