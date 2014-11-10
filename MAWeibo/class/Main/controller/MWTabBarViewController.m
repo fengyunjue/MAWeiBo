@@ -45,7 +45,8 @@
      [self setupAllChildViewControllers];
     
     // 4. 添加定时器
-    [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(checkUnreadCount) userInfo:nil repeats:YES];
+   NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(checkUnreadCount) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
 
  - (void)checkUnreadCount
@@ -59,6 +60,9 @@
         self.message.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",result.messageCount];
         // 3. me的badge
         self.me.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",result.follower];
+        // 4. 设置图标右上角的数字
+        [UIApplication sharedApplication].applicationIconBadgeNumber = result.count;
+        
     } failure:^(NSError *error) {
         
     }];

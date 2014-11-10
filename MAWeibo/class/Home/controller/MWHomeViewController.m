@@ -152,7 +152,7 @@
             // 让刷新控件停止显示刷新状态
             [self.tableView footerEndRefreshing];
         }
-        MALog(@"%@",error);
+       
     }];
 }
 

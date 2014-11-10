@@ -15,4 +15,9 @@
     return self.cmt + self.dm + self.mention_cmt +self.mention_status;
 }
 
+- (int)count
+{
+    return self.messageCount + self.status + self.follower;
+}
+
 @end

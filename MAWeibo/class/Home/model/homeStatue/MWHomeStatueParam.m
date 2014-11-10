@@ -10,4 +10,9 @@
 
 @implementation MWHomeStatueParam
 
+- (NSNumber *)count
+{
+    return _count != 0 ? _count : @20 ;
+}
+
 @end

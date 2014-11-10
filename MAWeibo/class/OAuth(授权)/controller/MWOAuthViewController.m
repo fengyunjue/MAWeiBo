@@ -90,7 +90,7 @@
         [UIApplication sharedApplication].keyWindow.rootViewController = [MWWeiboTool MWWeiboToolDecideNewVersions];
         
     } failure:^(NSError *error) {
-        MALog(@"%@",error);
+        
     }];
 }
 

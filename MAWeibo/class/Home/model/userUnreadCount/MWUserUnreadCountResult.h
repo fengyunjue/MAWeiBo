@@ -39,4 +39,9 @@
  *  消息的总数
  */
 - (int)messageCount;
+
+/**
+ *  所有提醒
+ */
+- (int)count;
 @end

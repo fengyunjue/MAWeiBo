@@ -9,15 +9,27 @@
 #import "MWStatueTool.h"
 #import "MWHttpTool.h"
 #import "MJExtension.h"
+#import "MWStatueCacheTool.h"
+#import "MWStatuse.h"
 
 @implementation MWStatueTool
 
-+ (void)getHomeStatueWithParam:(MWHomeStatueParam *)param success:(void (^)(MWHomeStatueResult *))success failure:(void (^)(NSError *))failure
++ (void)getHomeStatueWithParam:(MWHomeStatueParam *)param success:(void (^)(MWHomeStatueResult *result))success failure:(void (^)(NSError *error))failure
 {
-    [MWHttpTool getWithUrl:@"https://api.weibo.com/2/statuses/home_timeline.json" param:param.keyValues success:^(id json) {
+    NSArray *dictArray = [MWStatueCacheTool getStatuesWithParam:param];
+    if (dictArray.count) {
+        MWHomeStatueResult *result = [[MWHomeStatueResult alloc]init];
+        result.statuses = [MWStatuse objectArrayWithKeyValuesArray:dictArray];
         if (success) {
+            success(result);
+        }
+    }else{
+    [MWHttpTool getWithUrl:@"https://api.weibo.com/2/statuses/home_timeline.json" param:param.keyValues success:^(id json) {
+        [MWStatueCacheTool saveStatueWithArray:json[@"statuses"]];
             // 从数组字典中获取数据模型
             MWHomeStatueResult *result = [MWHomeStatueResult objectWithKeyValues:json];
+        
+        if (success) {
             success(result);
         }
     } failure:^(NSError *error) {
@@ -26,6 +38,7 @@
         }
 
     }];
+    }
 }
 
 @end
