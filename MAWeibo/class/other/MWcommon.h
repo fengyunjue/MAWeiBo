@@ -30,7 +30,7 @@
 
 /**昵称字体*/
 #define MWHomeCellNameFont [UIFont systemFontOfSize:12]
-
+#define sum(a) [UIColor a]
 
 /**时间字体*/
 #define MWHomeCellTimeFont MWHomeCellNameFont

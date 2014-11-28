@@ -32,15 +32,18 @@
 {
     UIBarButtonItem *item = [UIBarButtonItem appearance];
     
+    
     // 设置背景
     if (!iOS7) {
         [item setBackgroundImage:[UIImage imageWithName:@"navigationbar_button_background"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
         [item setBackgroundImage:[UIImage imageWithName:@"navigationbar_button_background_pushed"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
         [item setBackgroundImage:[UIImage imageWithName:@"navigationbar_button_send_background_disabled"] forState:UIControlStateDisabled barMetrics:UIBarMetricsDefault];
+        
+        
     }
     
-    // 设置文字属性
     // 先包装一个字典,然后将字典设置给TitleTextAttribute属性
+    // 设置文字属性
     NSMutableDictionary *textAttrs  = [NSMutableDictionary dictionary];
     textAttrs[UITextAttributeTextColor] = iOS7 ? [UIColor orangeColor] : [UIColor grayColor];
     textAttrs[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];

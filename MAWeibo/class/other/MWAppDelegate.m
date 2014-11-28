@@ -20,6 +20,8 @@
     self.window.rootViewController = [MWWeiboTool MWWeiboToolDecideLogin];
    
     [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 
